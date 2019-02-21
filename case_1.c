@@ -5,7 +5,7 @@ int main(void)
 {
 
 	int max = 5;
-	int i,j,k;
+	int i,j,k,a = 0;
 
 	for (int i = 1; i < max; i++)
 	{
@@ -15,10 +15,13 @@ int main(void)
 			for (int k = 1; k < max; k++)
 			{
 				//if( k == i || k == j ) continue;
+				a++;
 				printf("%d-%d-%d\n", i, j, k );
 			}
 		}
 	}
+
+	printf("%d组三位数\n", a);
 
 	return 0;
 }
