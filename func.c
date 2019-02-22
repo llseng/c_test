@@ -15,6 +15,27 @@ int max(int num, int num2)
 	return result;
 }
 
+int min(int x, int y)
+{
+	int r;
+
+	if( x < y )
+		r = x;
+	else
+		r = y;
+
+	return r;
+}
+
+int sum(int x, int y)
+{
+	int r;
+
+	r = x + y;
+
+	return r;
+}
+
 //引用调用
 void swap(int *x, int *y)
 {
@@ -45,7 +66,7 @@ int main(int argc, char const *argv[])
 	swap(&a,&b);
 
 	printf("数值调换后 a = %d b = %d\n", a, b);
-
+	
 	/* code */
 	return 0;
 }
