@@ -1,0 +1,851 @@
+2019/02/28 16:02:01 [emerg] 84531#0: getpwnam("nginx:WEB") failed in /home/WEB/nginx/nginx1.14.2/conf/nginx.conf:2
+2019/02/28 16:08:30 [emerg] 84534#0: getpwnam("nginx") failed in /home/WEB/nginx/nginx1.14.2/conf/nginx.conf:2
+2019/02/28 16:16:51 [notice] 84552#0: signal process started
+2019/02/28 16:16:51 [error] 84552#0: invalid PID number "" in "/home/WEB/nginx/nginx1.14.2/logs/nginx.pid"
+2019/02/28 16:21:17 [error] 84555#0: *3 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/02/28 16:40:45 [notice] 84612#0: signal process started
+2019/02/28 16:41:29 [error] 84613#0: *9 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/02/28 16:41:32 [error] 84613#0: *6 open() "/home/WEB/nginx/nginx1.14.2/html/inxex.a" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /inxex.a HTTP/1.1", host: "192.168.40.10"
+2019/02/28 16:41:32 [error] 84613#0: *6 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/02/28 20:00:54 [emerg] 84776#0: invalid parameter "name" in /home/WEB/nginx/nginx1.14.2/conf/vhost/duxcms2.conf:9
+2019/02/28 20:02:03 [emerg] 84791#0: open() "/home/WEB/nginx/nginx1.14.2/conf/fastcgi_paramse" failed (2: No such file or directory) in /home/WEB/nginx/nginx1.14.2/conf/vhost/duxcms2.conf:10
+2019/02/28 20:02:58 [notice] 84794#0: signal process started
+2019/02/28 20:05:05 [error] 84795#0: *11 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.40.1, server: duxcms.lls, request: "HEAD / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls"
+2019/02/28 20:05:17 [error] 84795#0: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls"
+2019/02/28 20:05:18 [error] 84795#0: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls"
+2019/02/28 20:05:19 [error] 84795#0: *13 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/"
+2019/02/28 20:05:19 [error] 84795#0: *20 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls"
+2019/02/28 20:05:20 [error] 84795#0: *20 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls"
+2019/02/28 20:05:23 [error] 84795#0: *20 connect() failed (111: Connection refused) while connecting to upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls"
+2019/02/28 20:08:54 [error] 84795#0: *28 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls"
+2019/02/28 20:11:27 [error] 84795#0: *33 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/common/css/pintuer.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/common/css/pintuer.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:11:27 [error] 84795#0: *33 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/css/style.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/css/style.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:11:27 [error] 84795#0: *33 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/js/jquery.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:11:27 [error] 84795#0: *33 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/pintuer.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:11:27 [error] 84795#0: *33 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/respond.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:11:27 [error] 84795#0: *33 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/js/install.js' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/js/install.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:08 [error] 84795#0: *41 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/common/css/pintuer.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/common/css/pintuer.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:08 [error] 84795#0: *43 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/css/style.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/css/style.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:08 [error] 84795#0: *44 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/js/jquery.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:08 [error] 84795#0: *46 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/pintuer.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:08 [error] 84795#0: *47 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/respond.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:08 [error] 84795#0: *48 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/js/install.js' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/js/install.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:08 [error] 84795#0: *48 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:11 [error] 84795#0: *48 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/common/css/pintuer.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/common/css/pintuer.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:11 [error] 84795#0: *47 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/css/style.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/css/style.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:14 [error] 84795#0: *47 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/common/css/pintuer.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/common/css/pintuer.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:14 [error] 84795#0: *48 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/js/jquery.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:14 [error] 84795#0: *46 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/css/style.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/css/style.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:14 [error] 84795#0: *44 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/pintuer.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:14 [error] 84795#0: *43 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/respond.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:14 [error] 84795#0: *41 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/js/install.js' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/js/install.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:35 [error] 84795#0: *41 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/common/css/pintuer.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/common/css/pintuer.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:35 [error] 84795#0: *43 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/css/style.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/css/style.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:35 [error] 84795#0: *44 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/js/jquery.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:35 [error] 84795#0: *46 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/pintuer.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:35 [error] 84795#0: *48 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/respond.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:35 [error] 84795#0: *47 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/js/install.js' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/js/install.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:45 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/common/css/pintuer.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/common/css/pintuer.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:45 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/css/style.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/css/style.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:45 [error] 84795#0: *72 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/js/jquery.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:45 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/respond.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:45 [error] 84795#0: *78 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/pintuer.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:45 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/js/install.js' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/js/install.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:46 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/common/css/pintuer.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/common/css/pintuer.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:46 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/css/style.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/css/style.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:46 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/js/jquery.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:46 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/pintuer.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:46 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/respond.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:46 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/js/install.js' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/js/install.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:47 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/common/css/pintuer.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/common/css/pintuer.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:47 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/css/style.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/css/style.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:47 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/js/jquery.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:47 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/pintuer.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:47 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/respond.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:47 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/js/install.js' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/js/install.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:49 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/common/css/pintuer.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/common/css/pintuer.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:49 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/css/style.css' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/css/style.css HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:49 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/js/jquery.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:49 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/pintuer.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:49 [error] 84795#0: *73 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/public/common/js/respond.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:13:49 [error] 84795#0: *73 FastCGI sent in stderr: "Access to the script '/home/WEB/WWW/DuxCms2.0/public/install/js/install.js' has been denied (see security.limit_extensions)" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/install/js/install.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/index"
+2019/02/28 20:25:39 [emerg] 84817#0: pcre_compile() failed: nothing to repeat in "\.php(*.)$" at "*.)$" in /home/WEB/nginx/nginx1.14.2/conf/vhost/duxcms2.conf:6
+2019/02/28 20:26:06 [emerg] 84819#0: unknown directive "localtion" in /home/WEB/nginx/nginx1.14.2/conf/vhost/duxcms2.conf:15
+2019/02/28 20:26:30 [emerg] 84821#0: unknown directive "if(" in /home/WEB/nginx/nginx1.14.2/conf/vhost/duxcms2.conf:20
+2019/02/28 20:26:54 [emerg] 84823#0: unknown directive "if(!-e" in /home/WEB/nginx/nginx1.14.2/conf/vhost/duxcms2.conf:20
+2019/02/28 20:27:48 [emerg] 84825#0: unknown directive "if(!-e" in /home/WEB/nginx/nginx1.14.2/conf/vhost/duxcms2.conf:20
+2019/02/28 20:28:25 [notice] 84830#0: signal process started
+2019/02/28 21:05:54 [error] 84831#0: *179 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/02/28 21:19:54 [error] 84831#0: *189 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/03/01 13:35:45 [error] 1322#0: *1 FastCGI sent in stderr: "PHP message: PHP Warning:  Use of undefined constant THEME_NAME - assumed 'THEME_NAME' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/hook/TempalteHook.php on line 36
+PHP message: PHP Warning:  Use of undefined constant TPL_NAME - assumed 'TPL_NAME' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/hook/TempalteHook.php on line 36
+PHP message: PHP Warning:  Use of undefined constant THEME_NAME - assumed 'THEME_NAME' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/hook/TempalteHook.php on line 57
+PHP message: PHP Warning:  Use of undefined constant TPL_NAME - assumed 'TPL_NAME' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/hook/TempalteHook.php on line 57" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=install/Index/setup2 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup1"
+2019/03/01 13:43:59 [error] 1322#0: *36 FastCGI sent in stderr: "PHP message: PHP Warning:  Use of undefined constant THEME_NAME - assumed 'THEME_NAME' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/hook/TempalteHook.php on line 36
+PHP message: PHP Warning:  Use of undefined constant TPL_NAME - assumed 'TPL_NAME' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/hook/TempalteHook.php on line 36
+PHP message: PHP Warning:  Use of undefined constant THEME_NAME - assumed 'THEME_NAME' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/hook/TempalteHook.php on line 57
+PHP message: PHP Warning:  Use of undefined constant TPL_NAME - assumed 'TPL_NAME' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/hook/TempalteHook.php on line 57" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "POST /index.php?r=install/Index/setup3 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup2"
+2019/03/01 17:12:02 [error] 1322#0: *74 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/03/01 17:12:17 [error] 1322#0: *81 FastCGI sent in stderr: "PHP message: PHP Warning:  mysql_error() expects parameter 1 to be resource, boolean given in /home/WEB/WWW/DuxCms2.0/app/install/controller/IndexController.php on line 78" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "POST /index.php?r=install/Index/setup3 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup2"
+2019/03/01 19:21:33 [error] 1322#0: *121 FastCGI sent in stderr: "PHP message: PHP Warning:  Use of undefined constant IS_WRITE - assumed 'IS_WRITE' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php on line 122
+PHP message: PHP Warning:  file_put_contents(/home/WEB/WWW/DuxCms2.0/data/config/db.php): failed to open stream: Permission denied in /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php on line 125" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "POST /index.php?r=install/Index/setup3 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup2"
+2019/03/01 19:24:20 [error] 1322#0: *130 FastCGI sent in stderr: "PHP message: PHP Warning:  Use of undefined constant IS_WRITE - assumed 'IS_WRITE' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php on line 122
+PHP message: PHP Warning:  file_put_contents(/home/WEB/WWW/DuxCms2.0/data/config/db.php): failed to open stream: Permission denied in /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php on line 125" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "POST /index.php?r=install/Index/setup3 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup2"
+2019/03/01 19:30:01 [error] 1322#0: *154 FastCGI sent in stderr: "PHP message: PHP Warning:  Use of undefined constant IS_WRITE - assumed 'IS_WRITE' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php on line 122
+PHP message: PHP Warning:  Use of undefined constant IS_WRITE - assumed 'IS_WRITE' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php on line 122
+PHP message: PHP Warning:  Use of undefined constant NOW_TIME - assumed 'NOW_TIME' (this will throw an Error in a future version of PHP) in /home/WEB/WWW/DuxCms2.0/app/install/controller/IndexController.php on line 122" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "POST /index.php?r=install/Index/setup3 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup2"
+2019/03/01 19:30:01 [error] 1322#0: *154 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup3"
+2019/03/01 19:30:39 [error] 1322#0: *154 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=home/Index/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup3"
+2019/03/01 19:30:39 [error] 1322#0: *159 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/js/switch/jquery.SuperSlide.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 19:30:39 [error] 1322#0: *159 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 19:31:35 [error] 1322#0: *159 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=home/Index/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup3"
+2019/03/01 19:31:35 [error] 1322#0: *159 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/js/switch/jquery.SuperSlide.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 19:31:35 [error] 1322#0: *159 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 19:31:36 [error] 1322#0: *159 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=home/Index/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup3"
+2019/03/01 19:31:36 [error] 1322#0: *159 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/js/switch/jquery.SuperSlide.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 19:31:36 [error] 1322#0: *159 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 48 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(48): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 20:37:10 [error] 1322#0: *188 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 49 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(49): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=home/Index/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup3"
+2019/03/01 20:37:10 [error] 1322#0: *188 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 49 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(49): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/js/switch/jquery.SuperSlide.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 20:37:10 [error] 1322#0: *188 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php on line 49 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/duxcms/model/CategoryModel.php(49): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/duxcms/service/LabelService.php(35): app\duxcms\model\CategoryModel->loadData('1', 5)
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\duxcms\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(20): service('duxcms', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(14): framework\base\Template->display('themes/default/...')
+#6 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 20:43:47 [error] 1322#0: *194 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php on line 33 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php(33): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/article/service/LabelService.php(35): app\article\model\CategoryArticleModel->loadData('1', '4')
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\article\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(57): service('article', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Controller.php(21): framework\base\Template->display('themes/default/...', false, true)
+#6 /home/WEB/WWW/DuxCms2.0/app" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=home/Index/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup3"
+2019/03/01 20:43:47 [error] 1322#0: *208 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php on line 33 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php(33): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/article/service/LabelService.php(35): app\article\model\CategoryArticleModel->loadData('1', '4')
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\article\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(57): service('article', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Controller.php(21): framework\base\Template->display('themes/default/...', false, true)
+#6 /home/WEB/WWW/DuxCms2.0/app" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/js/switch/jquery.SuperSlide.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 20:43:47 [error] 1322#0: *208 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php on line 33 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php(33): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/article/service/LabelService.php(35): app\article\model\CategoryArticleModel->loadData('1', '4')
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\article\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(57): service('article', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Controller.php(21): framework\base\Template->display('themes/default/...', false, true)
+#6 /home/WEB/WWW/DuxCms2.0/app" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 20:46:43 [error] 1322#0: *211 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php on line 33 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php(33): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/article/service/LabelService.php(35): app\article\model\CategoryArticleModel->loadData('1', '4')
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\article\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(57): service('article', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Controller.php(21): framework\base\Template->display('themes/default/...', false, true)
+#6 /home/WEB/WWW/DuxCms2.0/app" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=home/Index/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=install/Index/setup3"
+2019/03/01 20:46:43 [error] 1322#0: *211 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php on line 33 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php(33): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/article/service/LabelService.php(35): app\article\model\CategoryArticleModel->loadData('1', '4')
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\article\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(57): service('article', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Controller.php(21): framework\base\Template->display('themes/default/...', false, true)
+#6 /home/WEB/WWW/DuxCms2.0/app" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /public/js/switch/jquery.SuperSlide.js HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 20:46:43 [error] 1322#0: *211 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught TypeError: Argument 1 passed to framework\base\Model::where() must be of the type array, string given, called in /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php on line 33 and defined in /home/WEB/WWW/DuxCms2.0/framework/base/Model.php:143
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/app/article/model/CategoryArticleModel.php(33): framework\base\Model->where('1')
+#1 /home/WEB/WWW/DuxCms2.0/app/article/service/LabelService.php(35): app\article\model\CategoryArticleModel->loadData('1', '4')
+#2 /home/WEB/WWW/DuxCms2.0/app/base/util/Function.php(321): app\article\service\LabelService->categoryList(Array)
+#3 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91) : eval()'d code(57): service('article', 'Label', 'categoryList', Array)
+#4 /home/WEB/WWW/DuxCms2.0/framework/base/Template.php(91): eval()
+#5 /home/WEB/WWW/DuxCms2.0/framework/base/Controller.php(21): framework\base\Template->display('themes/default/...', false, true)
+#6 /home/WEB/WWW/DuxCms2.0/app" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/Index/index"
+2019/03/01 21:10:12 [error] 1322#0: *300 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: [] operator not supported for strings in /home/WEB/WWW/DuxCms2.0/app/article/controller/CategoryController.php:49
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/framework/base/App.php(49): app\article\controller\CategoryController->index()
+#1 /home/WEB/WWW/DuxCms2.0/framework/core.php(97): framework\base\App::run()
+#2 /home/WEB/WWW/DuxCms2.0/index.php(10): require('/home/WEB/WWW/D...')
+#3 {main}
+  thrown in /home/WEB/WWW/DuxCms2.0/app/article/controller/CategoryController.php on line 49" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=article/Category/index&class_id=3 HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/"
+2019/03/02 15:11:07 [error] 1319#0: *3 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/03/02 18:49:06 [error] 1319#0: *242 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/03/02 18:50:40 [error] 1319#0: *255 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/03/03 14:57:22 [error] 1288#0: *34 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/03/06 23:13:13 [notice] 1790#0: signal process started
+2019/03/16 18:26:34 [error] 1623#0: *20528 open() "/home/WEB/nginx/nginx1.14.2/html/favicon.ico" failed (2: No such file or directory), client: 192.168.40.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "192.168.40.10"
+2019/04/01 15:54:04 [notice] 1774#0: signal process started
+2019/04/01 15:55:00 [error] 1775#0: *5 FastCGI sent in stderr: "PHP message: PHP Warning:  发生了预料之外的错误。WordPress.org或是此服务器的配置可能出了一些问题。如果您持续遇到困难，请试试<a href="http://zh-cn.forums.wordpress.org/">支持论坛</a>。 （WordPress无法建立到WordPress.org的安全连接，请联系您的服务器管理员。） in /home/WEB/WWW/mywp/wp-includes/update.php on line 155" while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET /wp-admin/ HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls", referrer: "http://whymust.lls/wp-login.php"
+2019/04/05 14:52:27 [notice] 1776#0: signal process started
+Enter PEM pass phrase:
+2019/04/05 14:52:30 [emerg] 1305#0: SSL_CTX_use_PrivateKey_file("/home/WEB/WWW/test/server.key") failed (SSL: error:0906406D:PEM routines:PEM_def_callback:problems getting password error:0906A068:PEM routines:PEM_do_header:bad password read error:140B0009:SSL routines:SSL_CTX_use_PrivateKey_file:PEM lib)
+2019/04/05 15:09:05 [notice] 1858#0: signal process started
+2019/04/05 15:18:41 [notice] 1872#0: signal process started
+2019/04/05 15:23:31 [notice] 1885#0: signal process started
+2019/04/22 11:26:02 [warn] 2004#0: conflicting server name "duxcms.lls" on 0.0.0.0:80, ignored
+2019/04/22 11:26:12 [warn] 2005#0: conflicting server name "duxcms.lls" on 0.0.0.0:80, ignored
+2019/04/22 11:26:12 [notice] 2005#0: signal process started
+2019/04/22 11:27:01 [notice] 2010#0: signal process started
+2019/04/22 12:09:51 [error] 2011#0: *102 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_feier/thinkphp/library/think/log/driver/File.php:61
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 61, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/log/driver/File.php(61): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/Log.php(222): think\log\driver\File->save(Array, true)
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(94): think\Log->save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/log/driver/File.php on line 61" while reading response header from upstream, client: 192.168.40.1, server: feier.lls, request: "GET /?s=/index/index/index HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "feier.lls"
+2019/04/22 12:09:57 [error] 2011#0: *105 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_feier/thinkphp/library/think/log/driver/File.php:61
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 61, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/log/driver/File.php(61): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/Log.php(222): think\log\driver\File->save(Array, true)
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(94): think\Log->save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/log/driver/File.php on line 61" while reading response header from upstream, client: 192.168.40.1, server: feier.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "feier.lls"
+2019/04/22 12:21:39 [notice] 2084#0: signal process started
+2019/04/22 21:16:28 [error] 2085#0: *458 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: Object of class think\response\Json could not be converted to string in /home/WEB/WWW/wk_feier/application/common/logic/PhoneCode.php:47
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/application/common/logic/PhoneCode.php(47): think\Error::appError(4096, 'Object of class...', '/home/WEB/WWW/w...', 47, Array)
+#1 /home/WEB/WWW/wk_feier/application/index/controller/Index.php(80): app\common\logic\PhoneCode->sendCode('18797818194', 'reg')
+#2 [internal function]: app\index\controller\Index->getPhoneCode()
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Container.php(395): ReflectionMethod->invokeArgs(Object(app\index\controller\Index), Array)
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/route/dispatch/Module.php(132): think\Container->invokeReflectMethod(Object(app\index\controller\Index), Object(ReflectionMethod), Array)
+#5 [internal function]: think\route\dispatch\Module->think\route\dispatch\{closure}(Object(think\Request), Object(Closure" while reading response header from upstream, client: 192.168.40.1, server: feier.lls, request: "POST /index/index/getphonecode.html HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "feier.lls", referrer: "http://feier.lls/index/index/reg.html"
+2019/04/22 21:17:29 [error] 2085#0: *458 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: Object of class think\response\Json could not be converted to string in /home/WEB/WWW/wk_feier/application/common/logic/PhoneCode.php:47
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/application/common/logic/PhoneCode.php(47): think\Error::appError(4096, 'Object of class...', '/home/WEB/WWW/w...', 47, Array)
+#1 /home/WEB/WWW/wk_feier/application/index/controller/Index.php(80): app\common\logic\PhoneCode->sendCode('18797818194', 'reg')
+#2 [internal function]: app\index\controller\Index->getPhoneCode()
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Container.php(395): ReflectionMethod->invokeArgs(Object(app\index\controller\Index), Array)
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/route/dispatch/Module.php(132): think\Container->invokeReflectMethod(Object(app\index\controller\Index), Object(ReflectionMethod), Array)
+#5 [internal function]: think\route\dispatch\Module->think\route\dispatch\{closure}(Object(think\Request), Object(Closure" while reading response header from upstream, client: 192.168.40.1, server: feier.lls, request: "POST /index/index/getphonecode.html HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "feier.lls", referrer: "http://feier.lls/index/index/reg.html"
+2019/04/25 09:25:02 [error] 2085#0: *1923 directory index of "/home/WEB/WWW/wk_feier/public/admin/" is forbidden, client: 192.168.40.1, server: feier.lls, request: "GET /admin/ HTTP/1.1", host: "feier.lls"
+2019/04/25 09:25:10 [error] 2085#0: *1923 directory index of "/home/WEB/WWW/wk_feier/public/admin/" is forbidden, client: 192.168.40.1, server: feier.lls, request: "GET /admin/ HTTP/1.1", host: "feier.lls"
+2019/04/25 09:26:25 [error] 2085#0: *1936 directory index of "/home/WEB/WWW/wk_feier/public/admin/" is forbidden, client: 192.168.40.1, server: feier.lls, request: "GET /admin/ HTTP/1.1", host: "feier.lls"
+2019/04/25 09:29:41 [error] 2085#0: *1948 directory index of "/home/WEB/WWW/wk_feier/public/index/" is forbidden, client: 192.168.40.1, server: feier.lls, request: "GET /index/ HTTP/1.1", host: "feier.lls"
+2019/04/25 09:31:00 [error] 2085#0: *1953 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: feier.lls, request: "GET /admin.php HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "feier.lls"
+2019/04/28 13:49:01 [error] 1661#0: *157 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Cannot declare class app\common\validate\User, because the name is already in use in /home/WEB/WWW/wk_feier/application/common/validate/Meal.php on line 34" while reading response header from upstream, client: 192.168.40.1, server: feier.lls, request: "POST /admin/meal/meal_deal/add/1.html HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "feier.lls", referrer: "http://feier.lls/admin/meal/meal_deal/add/1.html"
+2019/05/13 10:23:12 [error] 1641#0: *58 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Class Addons\Request\File contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Addons\Request\RequestI::exec) in /home/WEB/WWW/wk_feier/addons/Request/File.php on line 10" while reading response header from upstream, client: 192.168.40.1, server: feier.lls, request: "GET /index/test HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "feier.lls"
+2019/05/20 13:35:04 [error] 1641#0: *936 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 192.168.40.1, server: feier.lls, request: "GET /index/user/ww.html?ww=ceshi HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "feier.lls", referrer: "http://feier.lls/index/index/index.html?"
+2019/05/20 16:30:40 [error] 1641#0: *1021 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: Object of class think\response\Json could not be converted to string in /home/WEB/WWW/wk_feier/application/index/controller/Base.php:31
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/application/index/controller/Base.php(31): think\Error::appError(4096, 'Object of class...', '/home/WEB/WWW/w...', 31, Array)
+#1 /home/WEB/WWW/wk_feier/application/index/controller/User.php(18): app\index\controller\Base->__construct()
+#2 [internal function]: app\index\controller\User->__construct()
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Container.php(439): ReflectionClass->newInstanceArgs(Array)
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Container.php(284): think\Container->invokeClass('app\\index\\contr...', Array)
+#5 /home/WEB/WWW/wk_feier/thinkphp/library/think/App.php(725): think\Container->make('app\\index\\contr...', Array)
+#6 /home/WEB/WWW/wk_feier/thinkphp/library/think/route/dispatch/Module.php(95): think\App->controller('user', 'control" while reading response header from upstream, client: 192.168.40.1, server: feier.lls, request: "GET /index/user/ww.html?ww=ceshi HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "feier.lls", referrer: "http://feier.lls/"
+2019/05/24 18:36:25 [error] 1659#0: *134 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught Error: Class 'app\home\controller\redis' not found in /home/WEB/WWW/DuxCms2.0/app/home/controller/IndexController.php:22
+Stack trace:
+#0 /home/WEB/WWW/DuxCms2.0/framework/base/App.php(49): app\home\controller\IndexController->test()
+#1 /home/WEB/WWW/DuxCms2.0/framework/core.php(97): framework\base\App::run()
+#2 /home/WEB/WWW/DuxCms2.0/index.php(10): require('/home/WEB/WWW/D...')
+#3 {main}
+  thrown in /home/WEB/WWW/DuxCms2.0/app/home/controller/IndexController.php on line 22" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=home/index/test HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls"
+2019/05/24 18:40:20 [error] 1659#0: *148 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$e' (T_VARIABLE), expecting ')' in /home/WEB/WWW/DuxCms2.0/app/home/controller/IndexController.php on line 27" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /index.php?r=home/index/test HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls"
+2019/05/24 18:40:20 [error] 1659#0: *148 FastCGI sent in stderr: "PHP message: PHP Parse error:  syntax error, unexpected '$e' (T_VARIABLE), expecting ')' in /home/WEB/WWW/DuxCms2.0/app/home/controller/IndexController.php on line 27" while reading response header from upstream, client: 192.168.40.1, server: duxcms.lls, request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "duxcms.lls", referrer: "http://duxcms.lls/index.php?r=home/index/test"
+2019/05/30 11:16:08 [notice] 3153#0: signal process started
+2019/05/30 11:20:08 [error] 3154#0: *373 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:21:24 [error] 3154#0: *388 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:21:24 [error] 3154#0: *385 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:21:25 [error] 3154#0: *391 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:21:28 [error] 3154#0: *392 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:22:14 [error] 3154#0: *566 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:22:14 [error] 3154#0: *568 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:22:14 [error] 3154#0: *570 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:22:14 [error] 3154#0: *572 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:22:14 [error] 3154#0: *574 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:22:14 [error] 3154#0: *576 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:22:14 [error] 3154#0: *578 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:22:14 [error] 3154#0: *580 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/05/30 11:22:14 [error] 3154#0: *582 upstream timed out (110: Connection timed out) while reading response header from upstream, client: 192.168.40.1, server: whymust.lls, request: "GET / HTTP/1.0", upstream: "fastcgi://127.0.0.1:9000", host: "whymust.lls"
+2019/06/04 13:51:32 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:51:33 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:51:39 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:51:39 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:51:43 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:51:43 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:51:46 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:51:46 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:52:01 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:52:01 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/04 13:52:05 [error] 3154#0: *8068 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 [internal function]: think\Error::appException(Object(think\exception\ErrorException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(): Filename cannot be empty in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php:184
+Stack trace:
+#0 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): think\Error::appError(2, 'include(): File...', '/home/WEB/WWW/w...', 184, Array)
+#1 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(184): include()
+#2 /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php(97): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(56): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_feier/thinkphp/library/think/Error.php(90): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_feier/thinkphp/library/think/exception/Handle.php on line 184" while reading response heade
+2019/06/22 13:44:39 [notice] 3524#0: signal process started
+2019/06/22 14:08:50 [error] 3525#0: *157 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(PDOException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(PDOException))
+#4 [internal function]: think\Error::appException(Object(PDOException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php on line 162
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/libr" while reading response header from upst
+2019/06/22 14:08:54 [error] 3525#0: *162 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(PDOException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(PDOException))
+#4 [internal function]: think\Error::appException(Object(PDOException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php on line 162
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/libr" while reading response header from upst
+2019/06/22 14:08:55 [error] 3525#0: *162 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(107): think\exception\Handle->convertExceptionToResponse(Object(think\exception\HttpException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(78): think\exception\Handle->renderHttpException(Object(think\exception\HttpException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\HttpException))
+#5 [internal function]: think\Error::appException(Object(think\exception\HttpExc...
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShut
+2019/06/22 14:17:47 [error] 3525#0: *171 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(PDOException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(PDOException))
+#4 [internal function]: think\Error::appException(Object(PDOException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php on line 162
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/libr" while reading response header from upst
+2019/06/22 14:17:47 [error] 3525#0: *171 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(107): think\exception\Handle->convertExceptionToResponse(Object(think\exception\HttpException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(78): think\exception\Handle->renderHttpException(Object(think\exception\HttpException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\HttpException))
+#5 [internal function]: think\Error::appException(Object(think\exception\HttpExc...
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShut
+2019/06/22 14:17:52 [error] 3525#0: *167 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(107): think\exception\Handle->convertExceptionToResponse(Object(think\exception\HttpException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(78): think\exception\Handle->renderHttpException(Object(think\exception\HttpException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\HttpException))
+#5 [internal function]: think\Error::appException(Object(think\exception\HttpExc...
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShut
+2019/06/22 14:17:55 [error] 3525#0: *177 FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream, client: 192.168.40.1, server: yycms.lls, request: "GET /index.phpo HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "yycms.lls"
+2019/06/22 14:17:55 [error] 3525#0: *177 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(107): think\exception\Handle->convertExceptionToResponse(Object(think\exception\HttpException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(78): think\exception\Handle->renderHttpException(Object(think\exception\HttpException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\HttpException))
+#5 [internal function]: think\Error::appException(Object(think\exception\HttpExc...
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShut
+2019/06/22 14:17:58 [error] 3525#0: *182 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(PDOException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(PDOException))
+#4 [internal function]: think\Error::appException(Object(PDOException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php on line 162
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/libr" while reading response header from upst
+2019/06/22 14:17:58 [error] 3525#0: *182 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(107): think\exception\Handle->convertExceptionToResponse(Object(think\exception\HttpException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(78): think\exception\Handle->renderHttpException(Object(think\exception\HttpException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\HttpException))
+#5 [internal function]: think\Error::appException(Object(think\exception\HttpExc...
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShut
+2019/06/22 14:23:13 [error] 3525#0: *189 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(PDOException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(PDOException))
+#4 [internal function]: think\Error::appException(Object(PDOException))
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php on line 162
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShutdown()
+#6 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/libr" while reading response header from upst
+2019/06/22 14:23:13 [error] 3525#0: *189 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(107): think\exception\Handle->convertExceptionToResponse(Object(think\exception\HttpException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(78): think\exception\Handle->renderHttpException(Object(think\exception\HttpException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\HttpException))
+#5 [internal function]: think\Error::appException(Object(think\exception\HttpExc...
+PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: include(/home/WEB/WWW/wk_yycms/error.htm): failed to open stream: No such file or directory in /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php:162
+Stack trace:
+#0 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): think\Error::appError(2, 'include(/home/W...', '/home/WEB/WWW/w...', 162, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(162): include()
+#2 /home/WEB/WWW/wk_yycms/system/library/think/exception/Handle.php(80): think\exception\Handle->convertExceptionToResponse(Object(think\exception\ErrorException))
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(47): think\exception\Handle->render(Object(think\exception\ErrorException))
+#4 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(80): think\Error::appException(Object(think\exception\ErrorException))
+#5 [internal function]: think\Error::appShut
+2019/06/22 14:52:22 [error] 3525#0: *225 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php:50
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 50, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php(50): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_yycms/system/library/think/Log.php(157): think\log\driver\File->save(Array)
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(84): think\Log::save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php on line 50" while reading response header from upstream, client: 192.168.40.1, server: yycms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "yycms.lls"
+2019/06/22 14:54:32 [error] 3525#0: *233 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php:50
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 50, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php(50): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_yycms/system/library/think/Log.php(157): think\log\driver\File->save(Array)
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(84): think\Log::save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php on line 50" while reading response header from upstream, client: 192.168.40.1, server: yycms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "yycms.lls"
+2019/06/22 14:54:33 [error] 3525#0: *233 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php:50
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 50, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php(50): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_yycms/system/library/think/Log.php(157): think\log\driver\File->save(Array)
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(84): think\Log::save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php on line 50" while reading response header from upstream, client: 192.168.40.1, server: yycms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "yycms.lls"
+2019/06/22 15:15:48 [error] 3525#0: *248 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php:50
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 50, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php(50): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_yycms/system/library/think/Log.php(157): think\log\driver\File->save(Array)
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(84): think\Log::save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php on line 50" while reading response header from upstream, client: 192.168.40.1, server: yycms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "yycms.lls"
+2019/06/22 15:17:45 [error] 3525#0: *255 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php:50
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 50, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php(50): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_yycms/system/library/think/Log.php(157): think\log\driver\File->save(Array)
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(84): think\Log::save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php on line 50" while reading response header from upstream, client: 192.168.40.1, server: yycms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "yycms.lls"
+2019/06/22 15:20:37 [error] 3525#0: *257 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php:50
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 50, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php(50): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_yycms/system/library/think/Log.php(157): think\log\driver\File->save(Array)
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(84): think\Log::save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php on line 50" while reading response header from upstream, client: 192.168.40.1, server: yycms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "yycms.lls"
+2019/06/22 15:21:26 [error] 3525#0: *257 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php:50
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 50, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php(50): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_yycms/system/library/think/Log.php(157): think\log\driver\File->save(Array)
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(84): think\Log::save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php on line 50" while reading response header from upstream, client: 192.168.40.1, server: yycms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "yycms.lls"
+2019/06/22 15:21:35 [error] 3525#0: *257 FastCGI sent in stderr: "PHP message: PHP Fatal error:  Uncaught think\exception\ErrorException: mkdir(): Permission denied in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php:50
+Stack trace:
+#0 [internal function]: think\Error::appError(2, 'mkdir(): Permis...', '/home/WEB/WWW/w...', 50, Array)
+#1 /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php(50): mkdir('/home/WEB/WWW/w...', 493, true)
+#2 /home/WEB/WWW/wk_yycms/system/library/think/Log.php(157): think\log\driver\File->save(Array)
+#3 /home/WEB/WWW/wk_yycms/system/library/think/Error.php(84): think\Log::save()
+#4 [internal function]: think\Error::appShutdown()
+#5 {main}
+  thrown in /home/WEB/WWW/wk_yycms/system/library/think/log/driver/File.php on line 50" while reading response header from upstream, client: 192.168.40.1, server: yycms.lls, request: "GET / HTTP/1.1", upstream: "fastcgi://127.0.0.1:9000", host: "yycms.lls"
+2019/06/22 15:59:49 [notice] 3684#0: signal process started
+2019/06/22 16:02:44 [notice] 3705#0: signal process started
+2019/06/22 16:22:31 [notice] 3715#0: signal process started
+2019/06/22 16:33:27 [notice] 3721#0: signal process started
+2019/06/22 16:55:26 [notice] 3732#0: signal process started
+2019/06/22 16:58:10 [notice] 3735#0: signal process started
+2019/06/22 17:01:06 [notice] 3751#0: signal process started
+2019/06/22 17:22:19 [notice] 3760#0: signal process started
+2019/06/22 17:41:52 [notice] 3766#0: signal process started

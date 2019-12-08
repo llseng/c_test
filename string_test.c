@@ -5,15 +5,21 @@
 //初始函数
 int main(int argc, char const *argv[])
 {
+	int i = 0;
 
-	char str[] = "a我是谁";
-
-	//char *p = str;
-
-	//char test[10];
-
-	printf("%s\n", __FILE__ );
-	//printf("%s\n", str);
+	printf("当前进度0%%");
+	while(i<=100)
+	{
+		Sleep(100);
+		if( i<=10 )
+		{
+			printf("\b\b");
+		}else{
+			printf("\b\b\b");
+		}
+		printf("%d%%", i);
+		i++;
+	}
 
 	return 0;
 }
