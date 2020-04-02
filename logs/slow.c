@@ -49,7 +49,7 @@ int main(int argc, char const *argv[])
 		strcpy(rrow, row);
 	}
 
-	printf("慢执行文件出现吃数 %d次\n", sc_len);
+	printf("慢执行文件出现次数 %d次\n", sc_len);
 
 	fclose(logFile);
 
