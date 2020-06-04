@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-03 16:05:10
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-04 12:17:03
+* @Last Modified time: 2020-06-04 14:59:28
 */
 
 #include <stdio.h>
@@ -16,8 +16,10 @@
 
 // 同时能处理的最大连接数
 #define MAX_BACKLOG 10
+// 读取最大长度
+#define MAX_LINE 255
 // 监听端口
-#define LISTEN_PORT 1002
+#define LISTEN_PORT 9710
 // 监听地址
 #define LISTEN_ADDR "127.0.0.1"
 
@@ -27,7 +29,8 @@ int main( int argc, char const *argv[] ) {
     int socket_fd, client_fd;
     int socket_domain, socket_type;
     int bind_status, listen_status, close_status;
-    int client_addr_len, w_count;
+    int client_addr_len, w_count, recv_len, send_len;
+    int recv_buf[MAX_LINE];
 
     socket_domain = AF_INET;
     socket_type = SOCK_STREAM;
@@ -65,17 +68,39 @@ int main( int argc, char const *argv[] ) {
         client_fd = accept( socket_fd, (struct sockaddr *)&client_addr, &client_addr_len );
         if( client_fd < 0 ) {
             perror( "accept" );
-            exit( 1 );
+            continue;
+            // exit( 1 );
         }
 
         printf( "client_fd %d connection from %s at PROT %d\n", client_fd, inet_ntoa( client_addr.sin_addr ), ntohs( client_addr.sin_port ) );
+
+        bzero( recv_buf, sizeof( recv_buf ) );
+        // 经socket接收数据
+        recv_len = recv( client_fd, recv_buf, MAX_LINE, 0 );
+        if( recv_len <= 0 ) {
+            perror( "recv" );
+            continue;
+            // exit( 1 );
+        }
+        printf( "recv_len %d, recv_buf_len %d, recv_buf %s\n", recv_len, strlen( recv_buf ), recv_buf );
+
+        // 经socket传送数据
+        // send_len = send( client_fd, recv_buf, sizeof( recv_buf ), 0 );
+        send_len = send( client_fd, recv_buf, recv_len, 0 );
+        if( send_len < 0 ) {
+            perror( "send" );
+            continue;
+            // exit( 1 );
+        }
+        printf( "send_len %d, send_buf_len %d, send_buf %s\n", send_len, strlen( recv_buf ), recv_buf );
 
         printf( "close client %d\n", client_fd );
         // 关闭文件;关闭客户端连接
         close_status = close( client_fd );
         if( close_status < 0 ) {
             perror( "close" );
-            exit( 1 );
+            continue;
+            // exit( 1 );
         }
     }
 
