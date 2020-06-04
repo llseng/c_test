@@ -52,7 +52,7 @@ int main( int argc, const char *argv[] ) {
         if( thread_create_status != 0 ) {
             printf("pthread_create error: %u\n", thread_create_status);
         }
-
+        // 等待线程结束函数
         // pthread_join( tid, &req );
         printf("pthread_create: %u;pthread_exit %u;\n", tid, req);
     }
