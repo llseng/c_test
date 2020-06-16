@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-16 11:55:09
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-16 17:19:17
+* @Last Modified time: 2020-06-16 18:43:56
 */
 
 #include <errno.h>
@@ -20,7 +20,7 @@ void error_exit( char *str ) {
 
 int main( int argc, const char *argv[] ) {
 
-    pid_t pid;
+    pid_t pid, wpid;
 
     pid = fork();
     if( pid < 0 ) {
@@ -30,7 +30,15 @@ int main( int argc, const char *argv[] ) {
     if( pid ) {
         printf("this is parent;\n");
         // sleep( 10 ); // 睡眠10s, 等待子进程先退出
-        wait( pid ); //堵塞等待子程退出
+        // wait( pid ); //堵塞等待子程退出
+        do{
+            sleep( 1 );
+            wpid = waitpid( -1, NULL, WNOHANG );
+            printf("wpid %d\n", wpid);
+
+        }while( wpid < 1 );
+
+
     }else{
         printf("this is child\n");
         // exit( 1 ); // 子进程退出, 父进程未回收导致子进程变成僵尸进程
