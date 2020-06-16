@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-16 11:55:09
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-16 17:13:04
+* @Last Modified time: 2020-06-16 17:19:17
 */
 
 #include <errno.h>
@@ -30,14 +30,15 @@ int main( int argc, const char *argv[] ) {
     if( pid ) {
         printf("this is parent;\n");
         // sleep( 10 ); // 睡眠10s, 等待子进程先退出
+        wait( pid ); //堵塞等待子程退出
     }else{
         printf("this is child\n");
         // exit( 1 ); // 子进程退出, 父进程未回收导致子进程变成僵尸进程
         sleep( 10 ); // 父进程未回收先退出, 导致子进程成为孤儿进程(托管至进程1[init])
     }
 
-    system("ps -o pid,ppid,state,tty,command");
-    printf("pid %d ppid %d end\n", getpid(), getppid());
+    // system("ps -o pid,ppid,state,tty,command");
+    printf("%s pid %d ppid %d end\n", pid?"父":"子", getpid(), getppid());
 
     return 0;
 }
