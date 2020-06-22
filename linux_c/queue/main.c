@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-18 11:21:20
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-18 16:56:11
+* @Last Modified time: 2020-06-22 11:44:23
 */
 
 #include <stdio.h>
@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
     int a = 1;
 
     MQ_en( mq, (MQ_data)&a );
-
+    a = 10011;
     printf("mq->size = %d\n", mq->size);
 
     int b = 2;
