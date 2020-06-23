@@ -2,10 +2,11 @@
 * @Author: llseng
 * @Date:   2020-06-22 14:56:29
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-22 15:49:58
+* @Last Modified time: 2020-06-23 11:19:10
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(int argc, char const *argv[])
 {
@@ -30,6 +31,18 @@ int main(int argc, char const *argv[])
     }
 
     printf("d = %x\n", d );
+
+    printf("int sizeof%u\n", sizeof( int ) );
+    printf("long sizeof%u\n", sizeof( long ) );
+    printf("long long sizeof %u\n", sizeof( long long ) );
+    printf("long double sizeof %u\n", sizeof( long double ) );
+
+    char num_size, i;
+    unsigned long long num = 1;
+
+    printf("num_len = %u\n", sizeof( num ) );
+
+
 
     return 0;
 }
