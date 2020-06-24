@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-22 14:56:29
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-23 11:19:10
+* @Last Modified time: 2020-06-23 18:49:09
 */
 
 #include <stdio.h>
@@ -37,12 +37,17 @@ int main(int argc, char const *argv[])
     printf("long long sizeof %u\n", sizeof( long long ) );
     printf("long double sizeof %u\n", sizeof( long double ) );
 
-    char num_size, i;
+    char num_size;
     unsigned long long num = 1;
+
+    num_size = sizeof( num ) * 8;
 
     printf("num_len = %u\n", sizeof( num ) );
 
-
+    for (i = 0; i < num_size; ++i)
+    {
+        printf("num << %d = %llu\n", i, num << i);
+    }
 
     return 0;
 }
