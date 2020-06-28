@@ -2,13 +2,14 @@
 * @Author: llseng
 * @Date:   2020-06-16 11:55:09
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-16 18:43:56
+* @Last Modified time: 2020-06-28 11:29:58
 */
 
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <sys/wait.h>
 #include <sys/types.h>
 
 extern int errno;
