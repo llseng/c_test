@@ -29,7 +29,7 @@ void *thread_run( void *arg ) {
         printf("thread:%u; fnum:%u;\n", thrid, fnum );
         //释放锁
         pthread_mutex_unlock( &fnum_mutex );
-        // sleep( 1 );
+        // usleep( 10000 );
     }
     pthread_exit( NULL );
 }
