@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-29 14:49:14
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-29 16:50:07
+* @Last Modified time: 2020-06-29 17:04:10
 */
 
 #include <stdio.h>
@@ -51,7 +51,7 @@ static void *producer( void *param ) {
 
         pthread_cond_signal( &cond ); //发信号唤醒一个等待线程
         printf("%u usleep 10000\n", pthread_self());
-        usleep( 100000 ); // 随眠100毫秒
+        usleep( 10000 ); // 随眠10毫秒
     }
 
     pthread_exit( NULL );
@@ -79,6 +79,10 @@ static void *consumer( void *param ) {
         printf("%u consumer node %d\n", pthread_self(), lnode->value);
 
         free( lnode ); //释放节点占用
+
+        printf("%u usleep 1000000\n", pthread_self());
+        usleep( 1000000 ); // 随眠1000毫秒
+
     }
 
     pthread_mutex_unlock( &mutex );
