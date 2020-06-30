@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-30 12:21:08
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-30 18:15:38
+* @Last Modified time: 2020-06-30 18:20:30
 */
 
 #include <stdio.h>
@@ -103,7 +103,7 @@ int main(int argc, char const *argv[])
         return 0;
     }
 
-    mq_unlink( mq_name ); //分离队列 之后若持有计数为 0，则删除消息队列
+    mq_unlink( mq_name ); //分离队列 之后若持有计数为 0，则删除消息队列 (未分离则存在于外存, 可与其他或下一次程序共享)
 
     int i, result;
 
