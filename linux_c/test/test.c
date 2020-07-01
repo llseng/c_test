@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-28 11:27:04
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-30 18:07:32
+* @Last Modified time: 2020-07-01 14:56:13
 */
 
 #include <stdio.h>
@@ -11,6 +11,7 @@
 #include <sys/wait.h>
 #include <sys/types.h>
 #include <mqueue.h>
+#include <pthread.h>
 
 int main(int argc, char const *argv[])
 {
@@ -46,6 +47,10 @@ int main(int argc, char const *argv[])
     char str_buf[100];
     snprintf(str_buf, sizeof( str_buf ), "%ld", mqAttr.mq_flags);
     printf("str_buf %s.\n", str_buf);
+
+    printf("SCHED_FIFO min %d max %d\n", sched_get_priority_min(SCHED_FIFO), sched_get_priority_max(SCHED_FIFO));
+    printf("SCHED_RR min %d max %d\n", sched_get_priority_min(SCHED_RR), sched_get_priority_max(SCHED_RR));
+    printf("SCHED_OTHER min %d max %d\n", sched_get_priority_min(SCHED_OTHER), sched_get_priority_max(SCHED_OTHER));
 
     return 0;
 }
