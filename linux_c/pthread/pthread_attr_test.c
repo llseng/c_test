@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-07-01 11:15:25
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-07-01 16:32:11
+* @Last Modified time: 2020-07-01 17:33:59
 */
 #include <stdio.h>
 #include <errno.h>
@@ -43,7 +43,16 @@ static void *read_run( void *param ) {
 
     printf("read_%d start\n", lable);
 
+    pthread_setcancelstate( PTHREAD_CANCEL_ENABLE, NULL ); //   有两种值：PTHREAD_CANCEL_ENABLE：取消使能 PTHREAD_CANCEL_DISABLE：取消不使能（线程创建时的默认值）
+    // pthread_setcanceltype( PTHREAD_CANCEL_DEFFERED, NULL ); //有 2 种值：PTHREAD_CANCEL_DEFFERED：线程收到取消请求后继续运行至下一个取消点再结束（线程创建时的默认值）。 PTHREAD_CANCEL_ASYNCHRONOUS：线程立即结束
+
     while( 1 ) {
+        printf("read_%d cancel A\n", lable);
+
+        pthread_testcancel(); //设置取消点
+
+        printf("read_%d cancel B\n", lable);
+
         pthread_mutex_lock( &mutex ); //占有锁
 
         printf("read_%d count = %d\n", lable, count);
@@ -59,16 +68,45 @@ static void *read_run( void *param ) {
 
 static void *write_run( void *param ) {
 
-    int lable = *(int *)param;
+    int lable = *(int *)param, i, result;
 
     printf("write_%d start\n", lable);
 
     while( 1 ) {
+        printf("write_%d wa\n", lable);
+
         pthread_mutex_lock( &mutex ); //占有锁
+
+        printf("write_%d waa\n", lable);
+
+        printf("write_%d count %d\n", lable, count);
+
+        if( count == lable ) {
+            printf("write_%d wf\n", lable);
+            for (i = 0; i < THREAD_MAX; ++i)
+            {
+                result = pthread_cancel( tids[ i ] );
+                printf("tids[ %d ] %u ", i, tids[ i ]);
+                check_result( "pthread_cancel", result );
+                if( result != 0 ) {
+                    printf("pthread_cancel %d break\n", i);
+                    break;
+                }
+            }
+            printf("write_%d wfd\n", lable);
+
+            // pthread_mutex_unlock( &mutex ); //释放锁
+
+            // break;
+        }
 
         printf("write_%d count = %d\n", lable, ++count);
 
+        printf("write_%d wb\n", lable);
+
         pthread_mutex_unlock( &mutex ); //释放锁
+
+        printf("write_%d wc\n", lable);
 
         usleep( 1000000 ); //随眠 1000 毫秒
     }
