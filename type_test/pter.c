@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-18 11:58:56
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-07-01 11:54:10
+* @Last Modified time: 2020-07-01 12:28:16
 */
 
 #include <stdio.h>
@@ -20,11 +20,21 @@ typedef struct book_attr book_attr_t;
 
 static book_attr_t bal[ 10 ], ba, *bal_p, *ba_p;
 
+static void voidp_to_intp( void *p ) {
+    // printf("p->author = %s\n", ((book_attr_t *)p)->author);
+    printf("p = %d\n", *(int *)p );
+}
+
 int main(int argc, char const *argv[])
 {
 
     bal_p = bal;
     ba_p = &ba;
+
+    ba.line = 10;
+    strcpy( ba.title, "test");
+    strcpy( ba.author, "llseng");
+    strcpy( ba.intro, "test,test,test");
 
     printf("bal sizeof = %u\n", sizeof( bal ) ); //bal sizeof = 1440
     printf("ba sizeof = %u\n", sizeof( ba ) ); //ba sizeof = 144
@@ -32,6 +42,11 @@ int main(int argc, char const *argv[])
     printf("ba_p sizeof = %u\n", sizeof( ba_p ) ); //ba_p sizeof = 8
     printf("*bal_p sizeof = %u\n", sizeof( *bal_p ) ); //*bal_p sizeof = 144
     printf("*ba_p sizeof = %u\n", sizeof( *ba_p ) ); //*ba_p sizeof = 144
+
+    int num = 123;
+
+    // voidp_to_intp( (void *)&ba );
+    voidp_to_intp( (void *)&num );
 
     return 0;
 }
