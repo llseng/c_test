@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-29 14:49:14
 * @Last Modified by:   llseng
-* @Last Modified time: 2020-06-29 17:04:10
+* @Last Modified time: 2020-07-01 17:45:18
 */
 
 #include <stdio.h>
@@ -114,6 +114,12 @@ int main(int argc, char const *argv[])
     check_result( "consumer thread create", result );
     result = pthread_create( &tid_2, NULL, consumer, NULL );
     check_result( "consumer thread create", result );
+
+    if( pthread_equal( tid_1, tid_2 ) ) {
+        printf("tid_1 %u == tid_2 %u\n", tid_1, tid_2);
+    }else{
+        printf("tid_1 %u != tid_2 %u\n", tid_1, tid_2);
+    }
 
     producer( NULL );
 
