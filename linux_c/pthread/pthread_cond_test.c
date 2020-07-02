@@ -82,7 +82,7 @@ static void *consumer( void *param ) {
             nsec = tv.tv_sec * 1000000000 + tv.tv_usec * 1000 + wait_us * 1000;
             ts.tv_nsec = nsec % 1000000000;
             ts.tv_sec = nsec / 1000000000;
-
+            /*ts 时间为下次唤醒的绝对时间*/
             result = pthread_cond_timedwait( &cond, &mutex, &ts ); //堵塞获取变量
             switch (result) {
             case 0:
