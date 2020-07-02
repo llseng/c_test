@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <pthread.h>
+#include <sys/time.h>
 
 static pthread_mutex_t mutex; //PTHREAD_MUTEX_INITIALIZER; //互斥锁初始化常量(结构体常量)
 static pthread_cond_t cond; //PTHREAD_COND_INITIALIZER; //条件变量初始化常量(结构体常量)
@@ -51,7 +52,7 @@ static void *producer( void *param ) {
 
         pthread_cond_signal( &cond ); //发信号唤醒一个等待线程
         printf("%u usleep 10000\n", pthread_self());
-        usleep( 10000 ); // 随眠10毫秒
+        sleep( 1 ); // 随眠1000毫秒
     }
 
     pthread_exit( NULL );
@@ -70,7 +71,35 @@ static void *consumer( void *param ) {
 
         while( head == NULL ) {
             printf("%u consumer cond wait\n", pthread_self());
-            pthread_cond_wait( &cond, &mutex ); //堵塞获取变量
+            // pthread_cond_wait( &cond, &mutex ); //堵塞获取变量
+            struct timespec ts;
+            struct timeval tv;
+            int wait_us = 100000, result; //堵塞等待微妙, 返回值
+            long nsec; //纳秒
+
+            gettimeofday( &tv, NULL ); //获取当前时间
+
+            nsec = tv.tv_sec * 1000000000 + tv.tv_usec * 1000 + wait_us * 1000;
+            ts.tv_nsec = nsec % 1000000000;
+            ts.tv_sec = nsec / 1000000000;
+
+            result = pthread_cond_timedwait( &cond, &mutex, &ts ); //堵塞获取变量
+            switch (result) {
+            case 0:
+                printf("%u consumer wait success\n", pthread_self());
+                break;
+            case ETIMEDOUT:
+                printf("%u consumer wait timeout\n", pthread_self());
+                continue;
+                break;
+            
+            default:
+                printf("%u consumer wait error\n", pthread_self());
+                perror( "pthread_cond_timedwait" );
+                pthread_mutex_unlock( &mutex );
+                pthread_exit( NULL );
+                break;
+            }
         }
 
         lnode = head;
@@ -81,7 +110,7 @@ static void *consumer( void *param ) {
         free( lnode ); //释放节点占用
 
         printf("%u usleep 1000000\n", pthread_self());
-        usleep( 1000000 ); // 随眠1000毫秒
+        sleep( 1 ); // 随眠1000毫秒
 
     }
 
