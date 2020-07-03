@@ -1,8 +1,8 @@
 /*
 * @Author: llseng
 * @Date:   2020-06-17 19:15:27
-* @Last Modified by:   llseng
-* @Last Modified time: 2020-06-24 18:05:55
+ * @Last Modified by: llseng
+ * @Last Modified time: 2020-07-03 19:16:15
 */
 
 #include <stdio.h>
@@ -25,50 +25,22 @@ char *str_to_upper( char * );
 
 int main() {
 
-    struct m_t a = { 1, '1', "123456" };
+    char str1, str2[10] = "123", str3[3][10] = {"123","456","789"}, *strp1[3], **strp2;
+    strp1[0] = str3[0];
+    strp1[1] = str3[1];
+    strp1[2] = str3[2];
+    strp2 = strp1;
 
-    printf("%d %d\n", sizeof( a ), sizeof( a.c ) );
+    printf( "strp1[0][0] = %c\n", strp1[0][0] );
+    printf( "*strp1[0] = %c\n", *strp1[0] );
+    printf( "**strp1 = %c\n", **strp1 );
 
-    
-    char *p_str, str[] = "resource: net::ERR_CONNECTION_TIMED_OUT";
-    p_str = str;
-    int str_len = strlen( str );
-    int i = 0;
+    printf( "strp1 = %p\n", strp1 );
+    printf( "str3 = %p\n", str3 );
+    printf( "str3[0] = %p\n", str3[0] );
+    printf( "str3[0][0] = %p\n", str3[0][0] );
 
-    printf("str = '%s', str_len = %d\n", str, str_len);
-    printf("*p_str = '%c' = %d, p_str = '%s'\n", *p_str, *p_str, p_str);
-
-    printf("*p_str >> 4 = %d\n", *p_str >> 4);
-
-    printf("*(p_str + %d) '%c' is_abc %d\n", i, *(p_str + i), is_abc( *(p_str + i) ) );
-    i++;
-    printf("*(p_str + %d) '%c' is_labc %d\n", i, *(p_str + i), is_labc( *(p_str + i) ) );
-    i++;
-    printf("*(p_str + %d) '%c' is_uabc %d\n", i, *(p_str + i), is_uabc( *(p_str + i) ) );
-    i++;
-    printf("*(p_str + %d) '%c' char_to_lower %c = %c\n", i, *(p_str + i), char_to_lower( *(p_str + i) ), *(p_str + i) );
-
-    i++;
-    printf("*(p_str + %d) '%c' char_to_upper %c = %c\n", i, *(p_str + i), char_to_upper( *(p_str + i) ), *(p_str + i) );
-    i++;
-    printf("p_str[0] '%c' char_to_upper %c = %c\n", p_str[0], p_str[0] = char_to_upper( p_str[0] ), p_str[0] );
-
-    printf("p_str[0] '%c'\n", p_str[0]);
-    printf("str = '%s', str_len = %d\n", str, str_len);
-
-    char str1[ str_len + 1 ], str2[ str_len + 1 ];
-
-    strcpy(str1, str);
-    strcpy(str2, str);
-
-    printf("str1 = '%s', len = %d\n", str1, strlen( str1 ) );
-    printf("str2 = '%s', len = %d\n", str2, strlen( str2 ) );
-
-    str_to_lower( str1 );
-    str_to_upper( str2 );
-
-    printf("str1 lower = '%s', len = %d\n", str1, strlen( str1 ) );
-    printf("str2 upper = '%s', len = %d\n", str2, strlen( str2 ) );
+    printf( "**strp2 = %c\n", **strp2 );
 
     return 0;
 }
