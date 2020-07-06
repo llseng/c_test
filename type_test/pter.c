@@ -1,8 +1,8 @@
 /*
 * @Author: llseng
 * @Date:   2020-06-18 11:58:56
-* @Last Modified by:   llseng
-* @Last Modified time: 2020-07-01 12:28:16
+ * @Last Modified by: llseng
+ * @Last Modified time: 2020-07-06 12:16:55
 */
 
 #include <stdio.h>
@@ -23,6 +23,10 @@ static book_attr_t bal[ 10 ], ba, *bal_p, *ba_p;
 static void voidp_to_intp( void *p ) {
     // printf("p->author = %s\n", ((book_attr_t *)p)->author);
     printf("p = %d\n", *(int *)p );
+}
+
+static void *test_void( char* param ){
+    printf( "param = %s\n", param );
 }
 
 int main(int argc, char const *argv[])
@@ -47,6 +51,16 @@ int main(int argc, char const *argv[])
 
     // voidp_to_intp( (void *)&ba );
     voidp_to_intp( (void *)&num );
+
+    void * ba_void_p;
+    book_attr_t ba_void = {100, "test", "whymust", "test void *"};
+
+    ba_void_p = &ba_void;
+
+    void *(*f_1)(void *);
+    f_1 = test_void;
+
+    f_1( (void *)((book_attr_t *)ba_void_p)->intro );
 
     return 0;
 }
