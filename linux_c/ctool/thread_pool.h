@@ -58,12 +58,12 @@ int wm_thread_pool_set_idle_msec( wm_thread_pool_t *pool, unsigned int msec );
 
 #define wm_thread_pool_lock( pool ) pthread_mutex_lock( &(pool)->mutex )
 
-#define  wm_thread_pool_unlock( pool ) pthread_mutex_unlock( &(pool)->mutex )
+#define wm_thread_pool_unlock( pool ) pthread_mutex_unlock( &(pool)->mutex )
 
-#define  wm_thread_pool_signal( pool ) pthread_cond_signal( &(pool)->cond )
+#define wm_thread_pool_signal( pool ) pthread_cond_signal( &(pool)->cond )
 
-#define  wm_thread_pool_broadcast( pool ) pthread_cond_broadcast( &(pool)->cond );
+#define wm_thread_pool_broadcast( pool ) pthread_cond_broadcast( &(pool)->cond );
 
-#define  wm_thread_pool_wait( pool ) pthread_cond_wait( &(pool)->cond, &(pool)->mutex );
+#define wm_thread_pool_wait( pool ) pthread_cond_wait( &(pool)->cond, &(pool)->mutex );
 
 int wm_thread_pool_timedwait( wm_thread_pool_t *pool, unsigned int msec );
