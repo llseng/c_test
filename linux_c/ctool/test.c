@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include "thread_pool.h"
+// #include "thread_pool.c"
 
 static void check_result( char *str, int result ) {
     if( result == 0 ) {
@@ -31,8 +32,12 @@ int main(int argc, char const *argv[])
     int res, i;
 
     wm_thread_pool_t pool;
+
     res = wm_thread_pool_init( &pool );
     check_result("wm_thread_pool_init", res);
+    if( res != 0 ) return 0;
+    res = wm_thread_pool_set_idle_msec( &pool, 5000 );
+    check_result("wm_thread_pool_set_idle_msec", res);
     if( res != 0 ) return 0;
 
     for ( i = 0; i < 10; i++)
@@ -42,19 +47,15 @@ int main(int argc, char const *argv[])
         if( res != 0 ) return 0;
     }
     
-    printf( "task_count = %d\n", pool.task_count );
-    printf( "thread_count = %d\n", pool.thread_count );
-    printf( "idle_thread_count = %d\n", pool.idle_thread_count );
+    while( 1 ) {
+        sleep( 1 );
+        printf( "task = %d thread = %d idle_thread = %d\r", pool.task_count, pool.thread_count, pool.idle_thread_count );
+        fflush( stdout );
+    }
 
     // res = wm_thread_pool_shutdown( &pool );
     // check_result("wm_thread_pool_shutdown", res);
     // if( res != 0 ) return 0;
-
-    sleep( 20 );
-    
-    printf( "task_count = %d\n", pool.task_count );
-    printf( "thread_count = %d\n", pool.thread_count );
-    printf( "idle_thread_count = %d\n", pool.idle_thread_count );
 
     return 0;
 }

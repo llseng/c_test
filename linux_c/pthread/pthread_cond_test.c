@@ -5,6 +5,7 @@
 * @Last Modified time: 2020-07-01 17:45:18
 */
 
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -47,11 +48,12 @@ static void *producer( void *param ) {
         lnode->next = head;
         head = lnode;
 
+        printf("%u producer >> node %d\n", pthread_self(), lnode->value);
+
         pthread_mutex_unlock( &mutex ); //解锁
-        printf("%u producer node %d\n", pthread_self(), lnode->value);
 
         pthread_cond_signal( &cond ); //发信号唤醒一个等待线程
-        printf("%u usleep 10000\n", pthread_self());
+        printf("%u usleep 1000000\n", pthread_self());
         sleep( 1 ); // 随眠1000毫秒
     }
 
@@ -65,11 +67,11 @@ static void *consumer( void *param ) {
 
     pthread_detach( pthread_self() ); //线程分离
 
-    pthread_mutex_lock( &mutex );
-
     while( 1 ) {
 
-        while( head == NULL ) {
+        pthread_mutex_lock( &mutex );
+
+        // while( head == NULL ) {
             printf("%u consumer cond wait\n", pthread_self());
             // pthread_cond_wait( &cond, &mutex ); //堵塞获取变量
             struct timespec ts;
@@ -90,6 +92,7 @@ static void *consumer( void *param ) {
                 break;
             case ETIMEDOUT:
                 printf("%u consumer wait timeout\n", pthread_self());
+                pthread_mutex_unlock( &mutex );
                 continue;
                 break;
             
@@ -100,21 +103,22 @@ static void *consumer( void *param ) {
                 pthread_exit( NULL );
                 break;
             }
-        }
+        // }
 
         lnode = head;
         head = head->next;
 
-        printf("%u consumer node %d\n", pthread_self(), lnode->value);
+        printf("%u consumer << node %d\n", pthread_self(), lnode->value);
 
         free( lnode ); //释放节点占用
 
-        printf("%u usleep 1000000\n", pthread_self());
-        sleep( 1 ); // 随眠1000毫秒
+        pthread_mutex_unlock( &mutex );
+
+        printf("%u usleep 5000000\n", pthread_self());
+
+        sleep( 5 ); // 随眠2秒
 
     }
-
-    pthread_mutex_unlock( &mutex );
 
     pthread_exit( NULL );
     return 0;
