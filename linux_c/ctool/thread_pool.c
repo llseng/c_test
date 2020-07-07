@@ -5,6 +5,8 @@
  * @Last Modified time: 2020-07-07 16:18:14
  */
 #include <stdlib.h>
+#include <time.h>
+#include <errno.h>
 #include <sys/time.h>
 #include "thread_pool.h"
 
@@ -235,5 +237,5 @@ int wm_thread_pool_timedwait( wm_thread_pool_t *pool, unsigned int msec ) {
     ts.tv_sec = tv.tv_sec + msec / 1000 + nsec / 1000000000;
     ts.tv_nsec = nsec % 1000000000;
 
-    return pthread_cond_timedwait( &pool->cond, pool->mutex, &ts );
+    return pthread_cond_timedwait( &pool->cond, &pool->mutex, &ts );
 }
