@@ -6,7 +6,7 @@ RM = rm -rf
 object_file = thread_pool.o
 
 test: test.o ctool.a
-	$(CC) $(CC_FLAGS) -o $@ $^
+	$(CC) $(CC_FLAGS) -g -o $@ $^
 
 test.o: test.c
 	$(CC) -c -o $@ $<
@@ -18,4 +18,4 @@ thread_pool.o: thread_pool.c thread_pool.h
 	$(CC) -c -o $@ $<
 
 clean:
-	$(RM) *.a *.o
+	$(RM) *.a *.o test

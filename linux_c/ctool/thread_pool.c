@@ -12,12 +12,12 @@
 
 wm_thread_pool_task_t *wm_thread_pool_malloc_task( void *(*func)(void *), void *param, wm_thread_pool_task_t *next ) {
     wm_thread_pool_task_t *task = (wm_thread_pool_task_t *)malloc( sizeof( wm_thread_pool_task_t ) );
-    if( task == NULL ) return NULL;
-
-    task->func = func;
-    task->param = param;
-    task->next = next;
-
+    if( task != NULL ) {
+        task->func = func;
+        task->param = param;
+        task->next = next;
+    }
+    
     return task;
 }
 
@@ -78,9 +78,10 @@ void *wm_thread_pool_worker_run( void *arg ) {
 
         if( result == 0 ) {
             /*任务通知信号*/
-            if( pool->task_head == pool->task_tail ) {
-                task = NULL;
-            }else{
+            // if( pool->task_head = pool->task_tail ) {
+            //     task = NULL;
+            // }else{
+            if( pool->task_head != pool->task_tail ) {
                 task = pool->task_head->next;
                 pool->task_head->next = task->next;
                 pool->task_count--;
@@ -106,10 +107,12 @@ void *wm_thread_pool_worker_run( void *arg ) {
         pool->idle_thread_count--;
         if( wm_thread_pool_unlock( pool ) != 0 ) break;
 
-        if( task != NULL ) task->func( task->param ); //执行任务
-
-        free( task );
-
+        if( task != NULL ) {
+            task->func( task->param ); //执行任务
+            free( task );
+            task = NULL;
+        }
+        
     }
 
     pthread_exit( NULL );
