@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-06 16:01:01 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-08 12:28:19
+ * @Last Modified time: 2020-07-08 14:42:58
  */
 #include <stdlib.h>
 #include <time.h>
@@ -25,8 +25,6 @@ void *wm_thread_pool_manager_run( void *arg ) {
     wm_thread_pool_t *pool = (wm_thread_pool_t *)arg;
     
     struct timespec req;
-    req.tv_sec = 0;
-    req.tv_nsec = 100000000;
 
     while ( 1 )
     {
@@ -83,8 +81,11 @@ void *wm_thread_pool_manager_run( void *arg ) {
 
         }
 
+        req.tv_sec = pool->poll_msec / 1000;
+        req.tv_nsec = ( pool->poll_msec % 1000 ) * 1000000;
+
         if( wm_thread_pool_unlock( pool ) != 0 ) break;
-    
+
         if( nanosleep( &req, NULL ) != 0 ) break;
     }
 
@@ -172,7 +173,9 @@ int wm_thread_pool_init( wm_thread_pool_t *pool ) {
     // pool->busy_thread_count = 0;
     pool->idle_thread_count = 0;
 
-    pool->idle_msec = 1000000;
+    pool->idle_msec = 120000;
+    pool->poll_msec = 1000;
+
     pool->max_thread_count = 1024;
     pool->max_idle_count = 4;
 
@@ -239,6 +242,16 @@ int wm_thread_pool_set_idle_msec( wm_thread_pool_t *pool, unsigned int msec ) {
     if( wm_thread_pool_lock( pool ) != 0 ) return 1;
 
     pool->idle_msec = msec;
+
+    if( wm_thread_pool_unlock( pool ) != 0 ) return 2;
+
+    return 0;
+}
+
+int wm_thread_pool_set_poll_msec( wm_thread_pool_t *pool, unsigned int msec ) {
+    if( wm_thread_pool_lock( pool ) != 0 ) return 1;
+
+    pool->poll_msec = msec;
 
     if( wm_thread_pool_unlock( pool ) != 0 ) return 2;
 

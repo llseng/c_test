@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-03 17:39:02 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-07 16:14:35
+ * @Last Modified time: 2020-07-08 14:37:50
  */
 #ifndef PTHREAD_H
 
@@ -36,6 +36,8 @@ struct wm_thread_pool {
     unsigned int idle_thread_count; //闲置线程数量
 
     unsigned int idle_msec; //闲置毫秒时间
+    unsigned int poll_msec; //管理轮询毫秒时间
+
     unsigned int max_thread_count; //最大线程数
     unsigned int max_idle_count; //最大闲置线程数
 
@@ -61,6 +63,8 @@ int wm_thread_pool_pop_task( wm_thread_pool_t *pool, wm_thread_pool_task_t *task
 int wm_thread_pool_shutdown( wm_thread_pool_t *pool );
 
 int wm_thread_pool_set_idle_msec( wm_thread_pool_t *pool, unsigned int msec );
+
+int wm_thread_pool_set_poll_msec( wm_thread_pool_t *pool, unsigned int msec );
 
 #define wm_thread_pool_lock( pool ) pthread_mutex_lock( &(pool)->mutex )
 // int wm_thread_pool_lock( wm_thread_pool_t *pool );
