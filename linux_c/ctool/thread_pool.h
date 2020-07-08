@@ -2,26 +2,26 @@
  * @Author: llseng 
  * @Date: 2020-07-03 17:39:02 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-08 14:57:04
+ * @Last Modified time: 2020-07-08 17:57:52
  */
-#ifndef PTHREAD_H
+#ifndef _WM_THREAD_POOL_H_
+#define _WM_THREAD_POOL_H_
 
-#define PTHREAD_H
 #include <pthread.h>
 
-#endif
-
-struct wm_thread_pool_task {
-    void *(*func)(void *);
-    void *param;
-    struct wm_thread_pool_task *next;
-};
 /**
  * 任务结构体
  */
-typedef struct wm_thread_pool_task wm_thread_pool_task_t;
+typedef struct wm_thread_pool_task {
+    void *(*func)(void *);
+    void *param;
+    struct wm_thread_pool_task *next;
+} wm_thread_pool_task_t;
 
-struct wm_thread_pool {
+/**
+ * 线程池结构体
+ */
+typedef struct wm_thread_pool {
     pthread_t manager_tid;
     pthread_attr_t manager_attr;
     pthread_cond_t cond;
@@ -42,11 +42,7 @@ struct wm_thread_pool {
     unsigned int max_idle_count; //最大闲置线程数
 
     unsigned int shutdown; //关闭
-};
-/**
- * 线程池结构体
- */
-typedef struct wm_thread_pool wm_thread_pool_t;
+} wm_thread_pool_t;
 
 wm_thread_pool_task_t *wm_thread_pool_malloc_task( void *(*func)(void *), void *param, wm_thread_pool_task_t *next );
 
@@ -86,3 +82,5 @@ int wm_thread_pool_timedwait( wm_thread_pool_t *pool, unsigned int msec );
 int wm_thread_pool_set_max_idle_count( wm_thread_pool_t *pool, unsigned int count );
 
 int wm_thread_pool_set_max_thread_count( wm_thread_pool_t *pool, unsigned int count );
+
+#endif /* _WM_THREAD_POOL_H */
