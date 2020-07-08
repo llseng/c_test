@@ -49,7 +49,7 @@ int main(int argc, char const *argv[])
     
     while( 1 ) {
         sleep( 1 );
-        printf( "task = %d thread = %d idle_thread = %d\r", pool.task_count, pool.thread_count, pool.idle_thread_count );
+        printf( "task = %d thread = %d idle_thread = %d max_idle_count = %d\n", pool.task_count, pool.thread_count, pool.idle_thread_count, pool.max_idle_count );
         fflush( stdout );
     }
 
