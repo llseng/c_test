@@ -17,7 +17,7 @@ wm_thread_pool_task_t *wm_thread_pool_malloc_task( void *(*func)(void *), void *
         task->param = param;
         task->next = next;
     }
-    
+
     return task;
 }
 
@@ -33,8 +33,8 @@ void *wm_thread_pool_manager_run( void *arg ) {
         if( wm_thread_pool_lock( pool ) != 0 ) break;
 
         int i, lave_idle_count, lave_thread_count, wait_create_count;
-        lave_idle_count = pool->max_idle_count - pool->idle_thread_count;
-        lave_thread_count = pool->max_thread_count - pool->thread_count;
+        lave_idle_count = pool->max_idle_count > pool->idle_thread_count? pool->max_idle_count - pool->idle_thread_count: 0;
+        lave_thread_count = pool->max_thread_count > pool->thread_count? pool->max_thread_count - pool->thread_count: 0;
         wait_create_count = lave_thread_count >= lave_idle_count? lave_idle_count: lave_thread_count;
 
         for( i = 0; i < wait_create_count; i++ ) {
@@ -64,38 +64,42 @@ void *wm_thread_pool_worker_run( void *arg ) {
 
     while( 1 ) {
         if( wm_thread_pool_lock( pool ) != 0 ) break;
+        //无任务时等待通知信号
+        if( pool->task_count < 1 ) {
+            pool->idle_thread_count++;
+            result = wm_thread_pool_timedwait( pool, pool->idle_msec );
+            pool->idle_thread_count--;
+        }
 
-        pool->idle_thread_count++;
-
-        result = wm_thread_pool_timedwait( pool, pool->idle_msec );
         /*线程池关闭*/
         if( pool->shutdown ) {
             pool->thread_count--;
-            pool->idle_thread_count--;
             if( wm_thread_pool_unlock( pool ) != 0 ) break;
             break;
         }
 
         if( result == 0 ) {
             /*任务通知信号*/
-            // if( pool->task_head = pool->task_tail ) {
+            // if( pool->task_head == pool->task_tail ) {
             //     task = NULL;
             // }else{
             if( pool->task_head != pool->task_tail ) {
                 task = pool->task_head->next;
                 pool->task_head->next = task->next;
                 pool->task_count--;
+                
+                // 重置任务队列
+                if( pool->task_head->next == NULL ) {
+                    pool->task_tail = pool->task_head;
+                    pool->task_count = 0;
+                }
             }
 
-            if( pool->task_head->next == NULL ) {
-                pool->task_tail = pool->task_head;
-                pool->task_count = 0;
-            }
         }else if( result == ETIMEDOUT ) {
             /*等待通知信号超时*/
-            if( pool->idle_thread_count > pool->max_idle_count ) {
+            if( pool->idle_thread_count >= pool->max_idle_count ) {
+                /*自身不属于忙碌线程, 所以是 限制 大于等于 闲置*/
                 pool->thread_count--;
-                pool->idle_thread_count--;
                 if( wm_thread_pool_unlock( pool ) != 0 ) break;
                 break;
             }
@@ -104,7 +108,6 @@ void *wm_thread_pool_worker_run( void *arg ) {
             break;
         }
 
-        pool->idle_thread_count--;
         if( wm_thread_pool_unlock( pool ) != 0 ) break;
 
         if( task != NULL ) {
