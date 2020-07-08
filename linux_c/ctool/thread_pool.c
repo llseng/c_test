@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-06 16:01:01 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-08 14:42:58
+ * @Last Modified time: 2020-07-08 14:58:19
  */
 #include <stdlib.h>
 #include <time.h>
@@ -292,4 +292,24 @@ int wm_thread_pool_timedwait( wm_thread_pool_t *pool, unsigned int msec ) {
     ts.tv_nsec = nsec % 1000000000;
 
     return pthread_cond_timedwait( &pool->cond, &pool->mutex, &ts );
+}
+
+int wm_thread_pool_set_max_idle_count( wm_thread_pool_t *pool, unsigned int count ) {
+    if( wm_thread_pool_lock( pool ) != 0 ) return 1;
+
+    pool->max_idle_count = count;
+
+    if( wm_thread_pool_unlock( pool ) != 0 ) return 2;
+
+    return 0;
+}
+
+int wm_thread_pool_set_max_thread_count( wm_thread_pool_t *pool, unsigned int count ) {
+    if( wm_thread_pool_lock( pool ) != 0 ) return 1;
+
+    pool->max_thread_count = count;
+
+    if( wm_thread_pool_unlock( pool ) != 0 ) return 2;
+
+    return 0;
 }

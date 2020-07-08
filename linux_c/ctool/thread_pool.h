@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-03 17:39:02 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-08 14:37:50
+ * @Last Modified time: 2020-07-08 14:57:04
  */
 #ifndef PTHREAD_H
 
@@ -82,3 +82,7 @@ int wm_thread_pool_set_poll_msec( wm_thread_pool_t *pool, unsigned int msec );
 // int wm_thread_pool_wait( wm_thread_pool_t *pool );
 
 int wm_thread_pool_timedwait( wm_thread_pool_t *pool, unsigned int msec );
+
+int wm_thread_pool_set_max_idle_count( wm_thread_pool_t *pool, unsigned int count );
+
+int wm_thread_pool_set_max_thread_count( wm_thread_pool_t *pool, unsigned int count );
