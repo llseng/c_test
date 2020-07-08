@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-18 11:58:56
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-06 12:16:55
+ * @Last Modified time: 2020-07-08 19:22:26
 */
 
 #include <stdio.h>
@@ -61,6 +61,30 @@ int main(int argc, char const *argv[])
     f_1 = test_void;
 
     f_1( (void *)((book_attr_t *)ba_void_p)->intro );
+    
+    int ba_arr_len = 2;
+    book_attr_t *ba_arr = (book_attr_t *)calloc( ba_arr_len, sizeof( book_attr_t ) );
+
+    strcpy( ba_arr[0].title, "0" );
+    strcpy( ba_arr[1].title, "1" );
+
+    printf( "ba_arr->title %s\n", ba_arr[0].title );
+    printf( "ba_arr->title %s\n", ba_arr[1].title );
+
+    ba_arr[0] = ba;
+
+
+    printf( "ba_arr->title %s\n", ba_arr[0].title );
+    printf( "ba_arr->author %s\n", ba_arr[0].author );
+    printf( "ba_arr->intro %s\n", ba_arr[0].intro );
+    printf( "ba_arr->title %s\n", ba_arr[1].title );
+    
+    strcpy( ba.title, "test0");
+
+    printf( "ba_arr->title %s\n", ba_arr[0].title );
+    printf( "ba_arr->author %s\n", ba_arr[0].author );
+    printf( "ba_arr->intro %s\n", ba_arr[0].intro );
+    printf( "ba_arr->title %s\n", ba_arr[1].title );
 
     return 0;
 }

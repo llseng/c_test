@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-07 16:44:16 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-07 16:45:03
+ * @Last Modified time: 2020-07-08 14:58:54
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,8 +38,17 @@ int main(int argc, char const *argv[])
     res = wm_thread_pool_init( &pool );
     check_result("wm_thread_pool_init", res);
     if( res != 0 ) return 0;
+
     res = wm_thread_pool_set_idle_msec( &pool, 5000 );
     check_result("wm_thread_pool_set_idle_msec", res);
+    if( res != 0 ) return 0;
+
+    res = wm_thread_pool_set_poll_msec( &pool, 500 );
+    check_result("wm_thread_pool_set_poll_msec", res);
+    if( res != 0 ) return 0;
+
+    res = wm_thread_pool_set_max_idle_count( &pool, 10 );
+    check_result("wm_thread_pool_set_max_idle_count", res);
     if( res != 0 ) return 0;
 
     for ( i = 0; i < 100; i++)
