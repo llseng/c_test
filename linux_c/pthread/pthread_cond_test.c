@@ -93,6 +93,10 @@ static void *consumer( void *param ) {
             case ETIMEDOUT:
                 printf("%u consumer wait timeout\n", pthread_self());
                 pthread_mutex_unlock( &mutex );
+
+                printf("%u usleep 5000000\n", pthread_self());
+
+                sleep( 5 ); // 随眠2秒
                 continue;
                 break;
             
@@ -113,10 +117,6 @@ static void *consumer( void *param ) {
         free( lnode ); //释放节点占用
 
         pthread_mutex_unlock( &mutex );
-
-        printf("%u usleep 5000000\n", pthread_self());
-
-        sleep( 5 ); // 随眠2秒
 
     }
 
