@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-06 16:01:01 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-07 16:18:14
+ * @Last Modified time: 2020-07-08 12:28:19
  */
 #include <stdlib.h>
 #include <time.h>
@@ -31,21 +31,56 @@ void *wm_thread_pool_manager_run( void *arg ) {
     while ( 1 )
     {
         if( wm_thread_pool_lock( pool ) != 0 ) break;
+        /*线程池关闭*/
+        if( pool->shutdown ) {
+            /*线程回收*/
+            while( pool->task_count ) {
+                wm_thread_pool_task_t *task = NULL;
+                if( pool->task_head != pool->task_tail ) {
+                    task = pool->task_head->next;
+                    pool->task_head->next = task->next;
+                    pool->task_count--;
+                    
+                    // 重置任务队列
+                    if( pool->task_head->next == NULL ) {
+                        pool->task_tail = pool->task_head;
+                        pool->task_count = 0;
+                    }
+                }else{
+                    pool->task_count--; //无论是否获得任务, 任务数必减一.
+                }
 
-        int i, lave_idle_count, lave_thread_count, wait_create_count;
-        lave_idle_count = pool->max_idle_count > pool->idle_thread_count? pool->max_idle_count - pool->idle_thread_count: 0;
-        lave_thread_count = pool->max_thread_count > pool->thread_count? pool->max_thread_count - pool->thread_count: 0;
-        wait_create_count = lave_thread_count >= lave_idle_count? lave_idle_count: lave_thread_count;
+                if( task != NULL ) free( task ); //释放任务内存
+            }
+            if( pool->idle_thread_count ) {
+                wm_thread_pool_broadcast( pool ); // 广播通知等待的工作线程
+            }
+            if( pool->thread_count == 0 ) {
+                pthread_attr_destroy( &pool->manager_attr );
+                pthread_cond_destroy( &pool->cond );
+                pthread_mutex_destroy( &pool->mutex );
+                pool->task_head = NULL;
+                pool->task_tail = NULL;
+                break;
+            }
+        }else{
+            /*线程管理*/
+            int i, lave_idle_count, lave_thread_count, wait_create_count;
+            lave_idle_count = pool->max_idle_count > pool->idle_thread_count? pool->max_idle_count - pool->idle_thread_count: 0;
+            lave_thread_count = pool->max_thread_count > pool->thread_count? pool->max_thread_count - pool->thread_count: 0;
+            wait_create_count = lave_thread_count >= lave_idle_count? lave_idle_count: lave_thread_count;
 
-        for( i = 0; i < wait_create_count; i++ ) {
-            pthread_t worker_tid;
-            pthread_attr_t worker_attr;
-            /*创建工作线程*/
-            if( pthread_attr_init( &worker_attr ) != 0 ) break;
-            if( pthread_attr_setdetachstate( &worker_attr, PTHREAD_CREATE_DETACHED ) != 0 ) break;
-            if( pthread_create( &worker_tid, &worker_attr, wm_thread_pool_worker_run, arg ) != 0 ) break;
+            for( i = 0; i < wait_create_count; i++ ) {
+                pthread_t worker_tid;
+                pthread_attr_t worker_attr;
+                /*创建工作线程*/
+                if( pthread_attr_init( &worker_attr ) != 0 ) break;
+                if( pthread_attr_setdetachstate( &worker_attr, PTHREAD_CREATE_DETACHED ) != 0 ) break;
+                if( pthread_create( &worker_tid, &worker_attr, wm_thread_pool_worker_run, arg ) != 0 ) break;
 
-            pool->thread_count++;
+                pool->thread_count++;
+            }
+
         }
 
         if( wm_thread_pool_unlock( pool ) != 0 ) break;
@@ -65,7 +100,7 @@ void *wm_thread_pool_worker_run( void *arg ) {
     while( 1 ) {
         if( wm_thread_pool_lock( pool ) != 0 ) break;
         //无任务时等待通知信号
-        if( pool->task_count < 1 ) {
+        if( pool->task_count == 0 ) {
             pool->idle_thread_count++;
             result = wm_thread_pool_timedwait( pool, pool->idle_msec );
             pool->idle_thread_count--;
@@ -176,11 +211,11 @@ int wm_thread_pool_pop_task( wm_thread_pool_t *pool, wm_thread_pool_task_t *task
         task = pool->task_head->next;
         pool->task_head->next = task->next;
         pool->task_count--;
-    }
 
-    if( pool->task_head->next == NULL ) {
-        pool->task_tail = pool->task_head;
-        pool->task_count = 0;
+        if( pool->task_head->next == NULL ) {
+            pool->task_tail = pool->task_head;
+            pool->task_count = 0;
+        }
     }
 
     if( wm_thread_pool_unlock( pool ) != 0 ) return 2;
