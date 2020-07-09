@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-08 15:47:35 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-09 16:10:59
+ * @Last Modified time: 2020-07-09 18:41:39
  */
 #ifndef _WM_LOGGER_H_
 #define _WM_LOGGER_H_
@@ -18,9 +18,12 @@
 #define LOG_ERROR       0x10
 #define LOG_CRITICAL    0x20
 
+#define DEFAULT_MAX_LINE_SIZE 8192
+#define DEFAULT_MAX_FILE_SIZE 6553600
+
 typedef struct wm_logger {
     char *name;
-    int handler_len;
+    unsigned int handler_len;
     wm_logger_handler_t **handler_arr;
 } wm_logger_t;
 
@@ -29,8 +32,8 @@ typedef struct wm_logger_handler {
     char *file_dir;
     char *file_name;
     unsigned int level;
-    unsigned int line_size_max;
-    unsigned int file_size_max;
+    unsigned int max_line_size;
+    unsigned int max_file_size;
 } wm_logger_handler_t;
 
 int wm_logger_init( wm_logger_t *logger, char *name );
