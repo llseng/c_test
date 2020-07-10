@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-07 16:44:16 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-10 18:03:33
+ * @Last Modified time: 2020-07-10 19:06:25
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,12 +10,16 @@
 #include "thread_pool.h"
 #include "logger.h"
 
-#define DEBUG 1
+#define DEBUG 0
 
 #if DEBUG
 #include "thread_pool.c"
 #include "logger.c"
 #endif
+
+
+static wm_logger_t logger;
+static wm_logger_handler_t log_handler;
 
 static void check_result( char *str, int result ) {
     if( result == 0 ) {
@@ -29,8 +33,16 @@ static void check_result( char *str, int result ) {
 
 static void * test_func(void *arg) {
     printf( "test_func arg = %d start\n", *(int *)arg );
-    sleep( *(int *)arg );
+    wm_log_info( &logger, "test_func arg = %d start", *(int *)arg );
+
+    int i;
+    for( i = 0; i < 1000; i++ ) {
+        wm_log_info( &logger, "test_func arg = %d > %d", *(int *)arg, i );
+    }
+
+    // sleep( *(int *)arg );
     printf( "test_func arg = %d end\n", *(int *)arg );
+    wm_log_info( &logger, "test_func arg = %d end", *(int *)arg );
     free( arg );
 }
 
@@ -39,6 +51,10 @@ int main(int argc, char const *argv[])
     printf( "test main start\n" );
 
     int res, i;
+
+    wm_logger_init( &logger, "logger_test" );
+    wm_logger_handler_init( &log_handler, "log_test.log", LOG_DEBUG );
+    wm_logger_add_handler( &logger, &log_handler );
 
     wm_thread_pool_t pool;
 
@@ -58,6 +74,10 @@ int main(int argc, char const *argv[])
     check_result("wm_thread_pool_set_max_idle_count", res);
     if( res != 0 ) return 0;
 
+    res = wm_thread_pool_set_max_thread_count( &pool, 100 );
+    check_result("wm_thread_pool_set_max_idle_count", res);
+    if( res != 0 ) return 0;
+
     for ( i = 0; i < 100; i++)
     {
         int *i_p = (int *)malloc( sizeof( int ) );
@@ -73,24 +93,15 @@ int main(int argc, char const *argv[])
         fflush( stdout );
     }
 
-    res = wm_thread_pool_shutdown( &pool );
-    check_result("wm_thread_pool_shutdown", res);
-    if( res != 0 ) return 0;
-
-    wm_logger_t logger;
-    wm_logger_handler_t log_handler;
-
-    wm_logger_init( &logger, "logger_test" );
-    wm_logger_handler_init( &log_handler, "../log_test.log", LOG_DEBUG );
-    wm_logger_add_handler( &logger, &log_handler );
+    // res = wm_thread_pool_shutdown( &pool );
+    // check_result("wm_thread_pool_shutdown", res);
+    // if( res != 0 ) return 0;
 
     while( 1 ) {
         sleep( 1 );
         printf( "task = %u thread = %u idle_thread = %u\n", pool.task_count, pool.thread_count, pool.idle_thread_count );
 
-        wm_log_info( &logger, "task = %u thread = %u idle_thread = %u\n", pool.task_count, pool.thread_count, pool.idle_thread_count );
-
-        fputs( "123456789\n", log_handler.fd );
+        wm_log_info( &logger, "task = %u thread = %u idle_thread = %u", pool.task_count, pool.thread_count, pool.idle_thread_count );
 
         fflush( stdout );
     }
