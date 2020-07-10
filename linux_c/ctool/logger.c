@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-09 16:12:04 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-10 17:46:15
+ * @Last Modified time: 2020-07-10 18:44:18
  */
 #include <stdio.h>
 #include <string.h>
@@ -70,7 +70,7 @@ int wm_logger_write( wm_logger_t *logger, int level, char *fmt, ... ) {
     
     wm_get_level_name( level, level_name );
     strftime( time_str, 80, time_format, time_tm );
-    sprintf( logger_str, "[%s] %s.%s: %s", time_str, logger->name, level_name, fmt );
+    sprintf( logger_str, "[%s] %s.%s: %s;\n", time_str, logger->name, level_name, fmt );
     // strcat( logger_str, fmt );
 
     va_list args;
@@ -193,6 +193,8 @@ int wm_logger_handler_write( wm_logger_handler_t *handler, unsigned int level, c
     int put_len;
     put_len = fputs( message, handler->fd );
     if( put_len < 0 ) return -1; 
+
+    fflush( handler->fd ); //将文件缓冲写入到文件
 
     return 0;
 }
