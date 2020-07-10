@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-02 12:28:31
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-09 18:21:45
+ * @Last Modified time: 2020-07-10 11:19:38
 */
 
 #include <stdio.h>
@@ -16,5 +16,8 @@ int main( void ) {
 
     printf( "a %d\n", a );
     printf( "b %d\n", b );
+
+    printf( "NULL %d\n", NULL );
+
     return 0;
 }

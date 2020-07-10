@@ -2,7 +2,7 @@
 * @Author: llseng
 * @Date:   2020-06-17 19:15:27
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-06 10:45:06
+ * @Last Modified time: 2020-07-10 10:23:47
 */
 
 #include <stdio.h>
@@ -25,22 +25,43 @@ char *str_to_upper( char * );
 
 int main() {
 
-    char str1, str2[10] = "123", str3[3][10] = {"123","456","789"}, *strp1[3], **strp2;
-    strp1[0] = str3[0];
-    strp1[1] = str3[1];
-    strp1[2] = str3[2];
-    strp2 = strp1;
+    char str1[10], str2[10] = "123456789", *str3 = (char *)calloc( 10, sizeof(char) );
+    
+    printf( "str1 '%s' len %d\n", str1, strlen( str1 ) );
+    printf( "str2 '%s' len %d\n", str2, strlen( str2 ) );
+    printf( "str3 '%s' len %d\n", str3, strlen( str3 ) );
 
-    printf( "strp1[0][0] = %c\n", strp1[0][0] );
-    printf( "*strp1[0] = %c\n", *strp1[0] );
-    printf( "**strp1 = %c\n", **strp1 );
+    memset( str1, 0, strlen(str1) );
+    memset( str3, 0, strlen(str3) );
 
-    printf( "strp1 = %p\n", strp1 );
-    printf( "str3 = %p\n", str3 );
-    printf( "str3[0] = %p\n", str3[0] );
-    printf( "str3[0][0] = %p\n", str3[0][0] );
+    strcpy( str1, str2 );
+    strcpy( str3, str2 );
+    
+    printf( "str1 '%s' len %d\n", str1, strlen( str1 ) );
+    printf( "str2 '%s' len %d\n", str2, strlen( str2 ) );
+    printf( "str3 '%s' len %d\n", str3, strlen( str3 ) );
 
-    printf( "**strp2 = %c\n", **strp2 );
+    memset( str1, 0, strlen(str1) );
+    memset( str3, 0, strlen(str3) );
+
+    strncpy( str1, str2, 5 );
+    strncpy( str3, str2, 5 );
+    
+    printf( "str1 '%s' len %d\n", str1, strlen( str1 ) );
+    printf( "str2 '%s' len %d\n", str2, strlen( str2 ) );
+    printf( "str3 '%s' len %d\n", str3, strlen( str3 ) );
+
+    memset( str1, 0, strlen(str1) );
+    memset( str3, 0, strlen(str3) );
+
+    strncpy( str1, str2, 0 );
+    if( str1 == NULL ) printf( "str1 = NULL\n");
+    strncpy( str3, str2, 0 );
+    if( str3 == NULL ) printf( "str3 = NULL\n");
+    
+    printf( "str1 '%s' len %d\n", str1, strlen( str1 ) );
+    printf( "str2 '%s' len %d\n", str2, strlen( str2 ) );
+    printf( "str3 '%s' len %d\n", str3, strlen( str3 ) );
 
     return 0;
 }
