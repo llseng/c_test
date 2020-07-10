@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-09 16:12:04 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-10 18:44:18
+ * @Last Modified time: 2020-07-10 19:30:52
  */
 #include <stdio.h>
 #include <string.h>
@@ -128,6 +128,8 @@ int wm_logger_handler_init( wm_logger_handler_t *handler, char *file_addr, unsig
     if( wm_logger_handler_set_max_line_size( handler, DEFAULT_MAX_LINE_SIZE ) != 0 ) return 3;
     if( wm_logger_handler_set_max_file_size( handler, DEFAULT_MAX_FILE_SIZE ) != 0 ) return 4;
 
+    handler->write_count = 0;
+
     return 0;
 }
 
@@ -186,15 +188,17 @@ int wm_logger_handler_set_max_file_size( wm_logger_handler_t *handler, unsigned 
 }
 
 int wm_logger_handler_write( wm_logger_handler_t *handler, unsigned int level, char *message ) {
-
-    if( handler->fd == NULL ) return 1;
-    if( strlen( message ) == 0 ) return 2;
-
-    int put_len;
-    put_len = fputs( message, handler->fd );
-    if( put_len < 0 ) return -1; 
-
+    if( level < handler->level ) return 1;
+    if( handler->fd == NULL ) return 2;
+    if( strlen( message ) == 0 ) return 3;
+    
+    if( fputs( message, handler->fd ) < 0 ) return -1; 
     fflush( handler->fd ); //将文件缓冲写入到文件
+    handler->write_count++;
+
+    if( (handler->write_count % WRITE_COUNT_MOD) == 1 ) {
+        
+    }
 
     return 0;
 }

@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-08 15:47:35 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-10 16:11:42
+ * @Last Modified time: 2020-07-10 19:30:10
  */
 #ifndef _WM_LOGGER_H_
 #define _WM_LOGGER_H_
@@ -21,6 +21,8 @@
 #define DEFAULT_MAX_LINE_SIZE 8192
 #define DEFAULT_MAX_FILE_SIZE 6553600
 
+#define WRITE_COUNT_MOD 100
+
 typedef struct wm_logger_handler {
     FILE *fd;
     char *file_dir;
@@ -28,6 +30,7 @@ typedef struct wm_logger_handler {
     unsigned int level;
     unsigned int max_line_size;
     unsigned int max_file_size;
+    unsigned int write_count;
 } wm_logger_handler_t;
 
 typedef struct wm_logger {
