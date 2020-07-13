@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-09 16:12:04 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-10 19:30:52
+ * @Last Modified time: 2020-07-13 16:30:42
  */
 #include <stdio.h>
 #include <string.h>
@@ -122,6 +122,8 @@ int wm_logger_handler_init( wm_logger_handler_t *handler, char *file_addr, unsig
     if( handler->file_dir == NULL ) return -1;
     handler->file_name = (char *)calloc( 1, sizeof( char ) );
     if( handler->file_name == NULL ) return -2;
+    
+    handler->fd = NULL;
 
     if( wm_logger_handler_set_file_addr( handler, file_addr ) != 0 ) return 1;
     if( wm_logger_handler_set_level( handler, level ) != 0 ) return 2;
@@ -146,21 +148,22 @@ int wm_logger_handler_destroy( wm_logger_handler_t *handler ) {
 }
 
 int wm_logger_handler_set_file_addr( wm_logger_handler_t *handler, char *file_addr ){
-    
+    if( handler->fd != NULL ) fclose( handler->fd );
+
     char *pos;
     int dir_len, name_len;
     pos = strrchr( file_addr, '/' );
-    pos = pos? pos: file_addr;
+    pos = pos? pos + 1: file_addr;
 
-    dir_len = pos != file_addr? abs( pos - file_addr ): 0;
-    name_len = strlen( pos + 1 );
+    dir_len = pos != file_addr? abs( pos - file_addr ) - 1: 0;
+    name_len = strlen( pos );
 
     handler->file_dir = (char *)realloc( handler->file_dir, (dir_len + 1) * sizeof( char ) );
     if( handler->file_dir == NULL ) return -1;
     handler->file_name = (char *)realloc( handler->file_name, (name_len + 1) * sizeof( char ) );
     if( handler->file_name == NULL ) return -2;
 
-    if( strcpy( handler->file_name, pos + 1 ) == NULL ) return -3;
+    if( strcpy( handler->file_name, pos ) == NULL ) return -3;
     if( strncpy( handler->file_dir, file_addr, dir_len ) == NULL ) return -4;
 
     handler->fd = fopen( file_addr, "ab+" );
@@ -197,8 +200,37 @@ int wm_logger_handler_write( wm_logger_handler_t *handler, unsigned int level, c
     handler->write_count++;
 
     if( (handler->write_count % WRITE_COUNT_MOD) == 1 ) {
-        
+        long fd_pos = ftell( handler->fd );
+
+        if( fd_pos < 0 ) return -2;
+        if( fd_pos > handler->max_file_size ) {
+            // time_t now_time = time( NULL );
+            char new_file_addr[ 1024 ];
+            if( wm_logger_handler_get_file_addr( handler, new_file_addr ) != 0 ) return 4;
+            if( strcat( new_file_addr, "-" ) == NULL ) return -3;
+            
+            if( wm_logger_handler_set_file_addr( handler, new_file_addr ) != 0 ) return 5;
+
+        }
     }
 
+    return 0;
+}
+
+int wm_logger_get_name( wm_logger_t *logger, char *str) {
+    if( strcpy( str, logger->name ) == NULL ) return -1;
+
+    return 0;
+}
+
+int wm_logger_handler_get_file_addr( wm_logger_handler_t *handler, char *str ) {
+    if( strcpy( str, "" ) == NULL ) return -1;
+    if( strlen( handler->file_dir ) ) {
+        if( strcat( str, handler->file_dir ) == NULL ) return -2;
+        if( strcat( str, "/" ) == NULL ) return -3;
+    }
+
+    if( strcat( str, handler->file_name ) == NULL ) return -4;
+    
     return 0;
 }

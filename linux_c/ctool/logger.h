@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-08 15:47:35 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-10 19:30:10
+ * @Last Modified time: 2020-07-13 16:12:58
  */
 #ifndef _WM_LOGGER_H_
 #define _WM_LOGGER_H_
@@ -19,7 +19,7 @@
 #define LOG_CRITICAL    0x20
 
 #define DEFAULT_MAX_LINE_SIZE 8192
-#define DEFAULT_MAX_FILE_SIZE 6553600
+#define DEFAULT_MAX_FILE_SIZE 104857600
 
 #define WRITE_COUNT_MOD 100
 
@@ -66,6 +66,10 @@ int wm_logger_handler_set_max_file_size( wm_logger_handler_t *handler, unsigned 
 int wm_logger_handler_write( wm_logger_handler_t *handler, unsigned int level, char *message );
 
 int wm_get_level_name( unsigned int level, char *str );
+
+int wm_logger_get_name( wm_logger_t *logger, char *str);
+
+int wm_logger_handler_get_file_addr( wm_logger_handler_t *handler, char *str );
 
 #define wm_log_debug( logger, fmt, ... ) wm_logger_write( logger, LOG_DEBUG, fmt, ##__VA_ARGS__ )
 #define wm_log_info( logger, fmt, ... ) wm_logger_write( logger, LOG_INFO, fmt, ##__VA_ARGS__ )
