@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-09 16:12:04 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-13 16:30:42
+ * @Last Modified time: 2020-07-13 17:38:41
  */
 #include <stdio.h>
 #include <string.h>
@@ -68,7 +68,7 @@ int wm_logger_write( wm_logger_t *logger, int level, char *fmt, ... ) {
     time_t now_time = time( NULL );
     struct tm * time_tm = localtime( &now_time );
     
-    wm_get_level_name( level, level_name );
+    wm_logger_get_level_name( level, level_name );
     strftime( time_str, 80, time_format, time_tm );
     sprintf( logger_str, "[%s] %s.%s: %s;\n", time_str, logger->name, level_name, fmt );
     // strcat( logger_str, fmt );
@@ -87,7 +87,7 @@ int wm_logger_write( wm_logger_t *logger, int level, char *fmt, ... ) {
     return 0;
 }
 
-int wm_get_level_name( unsigned int level, char *str ) {
+int wm_logger_get_level_name( unsigned int level, char *str ) {
     switch (level)
     {
     case LOG_DEBUG:
@@ -191,7 +191,12 @@ int wm_logger_handler_set_max_file_size( wm_logger_handler_t *handler, unsigned 
 }
 
 int wm_logger_handler_write( wm_logger_handler_t *handler, unsigned int level, char *message ) {
-    if( level < handler->level ) return 1;
+    if( wm_logger_in_level( handler->level ) ) {
+        if( level < handler->level ) return 1;
+    }else{
+        if( (level & handler->level) == 0 ) return 1;
+    }
+
     if( handler->fd == NULL ) return 2;
     if( strlen( message ) == 0 ) return 3;
     
@@ -233,4 +238,21 @@ int wm_logger_handler_get_file_addr( wm_logger_handler_t *handler, char *str ) {
     if( strcat( str, handler->file_name ) == NULL ) return -4;
     
     return 0;
+}
+
+int wm_logger_in_level( unsigned int level ) {
+    int s = 0;
+    switch (level)
+    {
+    case LOG_DEBUG:
+    case LOG_INFO:
+    case LOG_NOTICE:
+    case LOG_WARNING:
+    case LOG_ERROR:
+    case LOG_CRITICAL:
+        s = 1;
+        break;
+    }
+
+    return s;
 }

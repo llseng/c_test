@@ -2,7 +2,7 @@
  * @Author: llseng 
  * @Date: 2020-07-07 16:44:16 
  * @Last Modified by: llseng
- * @Last Modified time: 2020-07-13 16:27:51
+ * @Last Modified time: 2020-07-13 17:44:23
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -55,10 +55,10 @@ int main(int argc, char const *argv[])
     wm_logger_init( &logger, "logger_test" );
     wm_logger_handler_init( &log_handler, "log_test.log", LOG_DEBUG );
     wm_logger_add_handler( &logger, &log_handler );
-    wm_logger_handler_set_max_file_size( &log_handler, 10485760 );
+    // wm_logger_handler_set_max_file_size( &log_handler, 10485760 );
     i = 1000000;
     while( i-- ) {
-        wm_log_info( &logger, "'c:\\Users\\Administrator\\.vscode\\extensions\\ms-vscode.cpptools-0.29.0-insiders2\\debugAdapters\\bin\\WindowsDebugLauncher.exe' '--stdin=Microsoft-MIEngine-In-dqtqpesa.c0f' '--stdout=Microsoft-MIEngine-Out-hydghudb.est' '--stderr=Microsoft-MIEngine-Error-zsiqakoi.cvr' '--pid=Microsoft-MIEngine-Pid-jqtno3k4.0vm' '--dbgExe=D:\\Dev-Cpp\\MinGW64\\bin\\gdb.exe' '--interpreter=mi'" );
+        wm_log_info( &logger, "i = %d", i );
     }
 
     return 0;
