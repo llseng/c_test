@@ -113,7 +113,7 @@ int main(int argc, char const *argv[])
             // printf( "\n" );
             
             printf( "p %p\n", p);
-            printf( "p_len %d \np|%s|\n", status, p );
+            printf( "p_len %d p>>>%s<<<\n", status, p );
         }
         free( p );
 

@@ -54,48 +54,62 @@ int text_send( tcp_text_t *s, void *data, unsigned int len ) {
 
 int text_read( tcp_text_t *s, void *data ) {
     char buf[ MAX_MESSAGE_LINE ];
-    int length = 0, buf_len, r_len;
+    int length = 0, buf_len, r_len, data_len;
     buf_len = s->buf_end - s->buf_last;
+    data_len = s->buf_last - s->buf;
     printf( "1\n" );
-    do{
+    printf( "buf_len %d length %d data_len %d\n", buf_len, length, data_len );
+
+    length = text_input( s->buf, data_len );
+    while( buf_len && length == 0 ){
+        printf( "while\n" );
         memset(buf, 0, MAX_MESSAGE_LINE);
         int read_len = buf_len < MAX_MESSAGE_LINE? buf_len: MAX_MESSAGE_LINE;
+        printf( "recv left\n" );
         r_len = recv( s->sock, buf, read_len, 0 );
         printf( "r_len %d\n", r_len);
         printf( "buf |%s|\n", buf);
         if( r_len < 1 ) return -1;
-        length = text_input( buf, r_len );
+        
+        memmove( s->buf_last, buf, r_len );
+        buf_len -= r_len;
+        s->buf_last += r_len;
+        data_len += r_len;
+
+        length = text_input( s->buf, data_len );
         printf( "length %d\n", length);
-        if( length == 0 ) {
-            memcpy( s->buf_last, buf, r_len );
-            buf_len -= r_len;
-            s->buf_last += r_len;
-        }else{
-            memcpy( s->buf_last, buf, length );
-            buf_len -= length;
-            s->buf_last += length;
-        }
+        
         printf( "buf_len %d\n", buf_len);
         printf( "buf_last %p\n", s->buf_last);
-    }while ( buf_len < 1 || length == 0 );
+    }
+            
+    printf( "1-1\n" );
+
+    if( buf_len == 0 && length == 0 ) {
+        length = data_len;
+    }
+            
     printf( "2\n" );
     
     printf( "s->buf |%s|\n", s->buf);
-    int data_len = s->buf_last - s->buf;
     printf( "data_len %d\n", data_len);
-    text_decode( s->buf, data_len, data );
+
+    text_decode( s->buf, length, data );
+
     printf( "data |%s|\n", data);
     printf( "data %p\n", data);
     printf( "3\n" );
 
-    s->buf_last = s->buf;
-    memset( s->buf_last, 0, MAX_MESSAGE_SIZE );
-    if( length ) {
-        int last_len = r_len - length;
-        printf( "last_len %d\n", last_len);
-        memcpy( s->buf_last, buf + length, last_len );
-        s->buf_last += last_len;
+    int last_len = data_len - length;
+    printf( "last_len %d\n", last_len);
+
+    if( last_len ) {
+        memmove( s->buf, s->buf + length, last_len );
     }
+
+    s->buf_last = s->buf + last_len;
+    memset( s->buf_last, 0, length );
+
     printf( "4\n" );
         
     printf( "buf_last %p\n", s->buf_last);
