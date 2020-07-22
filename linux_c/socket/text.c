@@ -24,10 +24,8 @@ int text_input( void *data, unsigned int len ) {
 
 int text_encode( void *code, unsigned int len, void *dest ) {
     memmove( dest, code, len );
-    printf( "dest |%s|\n", dest);
     memset( (dest + len ), TEXT_DELIMITER, 1 );
     memset( (dest + len + 1), 0, 1 );
-    printf( "dest |%s|\n", dest);
     return 0;
 }
 
@@ -39,7 +37,7 @@ int text_decode( void *data, unsigned int len, void *dest ) {
     }else{
         memmove( dest, data, length - 1 );
     }
-    printf( "text_decode dest |%s|\n", dest );
+    
     return 0;
 }
 
@@ -48,7 +46,7 @@ int text_send( tcp_text_t *s, void *data, unsigned int len ) {
     char buf[ buf_len ];
     memset( buf, 0, buf_len );
     text_encode( data, buf_len - 2, buf );
-    printf( "send buf |%s|\n", buf );
+    
     return send( s->sock, buf, buf_len, 0 );
 }
 
@@ -57,18 +55,12 @@ int text_read( tcp_text_t *s, void *data ) {
     int length = 0, buf_len, r_len, data_len;
     buf_len = s->buf_end - s->buf_last;
     data_len = s->buf_last - s->buf;
-    printf( "1\n" );
-    printf( "buf_len %d length %d data_len %d\n", buf_len, length, data_len );
 
     length = text_input( s->buf, data_len );
     while( buf_len && length == 0 ){
-        printf( "while\n" );
         memset(buf, 0, MAX_MESSAGE_LINE);
         int read_len = buf_len < MAX_MESSAGE_LINE? buf_len: MAX_MESSAGE_LINE;
-        printf( "recv left\n" );
         r_len = recv( s->sock, buf, read_len, 0 );
-        printf( "r_len %d\n", r_len);
-        printf( "buf |%s|\n", buf);
         if( r_len < 1 ) return -1;
         
         memmove( s->buf_last, buf, r_len );
@@ -77,31 +69,15 @@ int text_read( tcp_text_t *s, void *data ) {
         data_len += r_len;
 
         length = text_input( s->buf, data_len );
-        printf( "length %d\n", length);
-        
-        printf( "buf_len %d\n", buf_len);
-        printf( "buf_last %p\n", s->buf_last);
     }
-            
-    printf( "1-1\n" );
 
     if( buf_len == 0 && length == 0 ) {
         length = data_len;
     }
-            
-    printf( "2\n" );
-    
-    printf( "s->buf |%s|\n", s->buf);
-    printf( "data_len %d\n", data_len);
 
     text_decode( s->buf, length, data );
 
-    printf( "data |%s|\n", data);
-    printf( "data %p\n", data);
-    printf( "3\n" );
-
     int last_len = data_len - length;
-    printf( "last_len %d\n", last_len);
 
     if( last_len ) {
         memmove( s->buf, s->buf + length, last_len );
@@ -109,10 +85,6 @@ int text_read( tcp_text_t *s, void *data ) {
 
     s->buf_last = s->buf + last_len;
     memset( s->buf_last, 0, length );
-
-    printf( "4\n" );
-        
-    printf( "buf_last %p\n", s->buf_last);
 
     return data_len;
 }
