@@ -63,6 +63,12 @@ int main() {
     printf( "str2 '%s' len %d\n", str2, strlen( str2 ) );
     printf( "str3 '%s' len %d\n", str3, strlen( str3 ) );
 
+    int i = 10;
+    while( i-- ) {
+        printf( "%s %s\n", __DATE__, __TIME__ );
+        sleep( 1 );
+    }
+
     return 0;
 }
 
