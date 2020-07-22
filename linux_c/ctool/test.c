@@ -10,9 +10,7 @@
 #include "thread_pool.h"
 #include "logger.h"
 
-#define DEBUG 1
-
-#if DEBUG
+#ifdef WIN32
 #include "thread_pool.c"
 #include "logger.c"
 #endif
