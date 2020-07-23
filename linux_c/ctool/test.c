@@ -54,6 +54,7 @@ int main(int argc, char const *argv[])
     wm_logger_handler_init( &log_handler, "log_test.log", LOG_DEBUG );
     wm_logger_add_handler( &logger, &log_handler );
     // wm_logger_handler_set_max_file_size( &log_handler, 10485760 );
+    wm_logger_handler_set_max_file_size( &log_handler, 10485760 );
     i = 1000000;
     while( i-- ) {
         wm_log_info( &logger, "i = %d", i );
