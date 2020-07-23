@@ -27,6 +27,7 @@ typedef struct wm_logger_handler {
     FILE *fd;
     char *file_dir;
     char *file_name;
+    char *file_suffix;
     unsigned int level;
     unsigned int max_line_size;
     unsigned int max_file_size;
@@ -56,6 +57,8 @@ int wm_logger_handler_init( wm_logger_handler_t *handler, char *file_addr, unsig
 int wm_logger_handler_destroy( wm_logger_handler_t *handler );
 
 int wm_logger_handler_set_file_addr( wm_logger_handler_t *handler, char *file_addr );
+
+int wm_logger_handler_set_file_suffix( wm_logger_handler_t *handler, char *file_suffix );
 
 int wm_logger_handler_set_level( wm_logger_handler_t *handler, unsigned int level );
 

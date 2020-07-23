@@ -11,6 +11,8 @@
 #include <time.h>
 #include "logger.h"
 
+static int wm_logger_handler_fopen( wm_logger_handler_t *handler );
+
 int wm_logger_init( wm_logger_t *logger, char *name ) {
     logger->name = (char *)calloc( strlen( name ) + 1, sizeof( char ) );
     if( logger->name == NULL ) return -1;
@@ -64,7 +66,7 @@ int wm_logger_pop_handler( wm_logger_t *logger ) {
 int wm_logger_write( wm_logger_t *logger, int level, char *fmt, ... ) {
     if( !logger->handler_len ) return 0;
     int i;
-    char logger_str[ strlen( logger->name ) + 80 + 4 + strlen( fmt ) ], time_str[ 80 ], time_format[] = "%Y-%m-%d %H:%M:%S", level_name[40];
+    char logger_str[ strlen( logger->name ) + 80 + 44 + strlen( fmt ) ], time_str[ 80 ], time_format[] = "%Y-%m-%d %H:%M:%S", level_name[40];
     time_t now_time = time( NULL );
     struct tm * time_tm = localtime( &now_time );
     
@@ -122,6 +124,8 @@ int wm_logger_handler_init( wm_logger_handler_t *handler, char *file_addr, unsig
     if( handler->file_dir == NULL ) return -1;
     handler->file_name = (char *)calloc( 1, sizeof( char ) );
     if( handler->file_name == NULL ) return -2;
+    handler->file_suffix = (char *)calloc( 1, sizeof( char ) );
+    if( handler->file_name == NULL ) return -3;
     
     handler->fd = NULL;
 
@@ -166,7 +170,46 @@ int wm_logger_handler_set_file_addr( wm_logger_handler_t *handler, char *file_ad
     if( strcpy( handler->file_name, pos ) == NULL ) return -3;
     if( strncpy( handler->file_dir, file_addr, dir_len ) == NULL ) return -4;
 
-    handler->fd = fopen( file_addr, "ab+" );
+    if( wm_logger_handler_fopen( handler ) != 0 ) return -5;
+
+    return 0;
+}
+
+int wm_logger_handler_set_file_suffix( wm_logger_handler_t *handler, char *file_suffix ) {
+    int suffix_len;
+    suffix_len = strlen( file_suffix );
+
+    handler->file_suffix = (char *)realloc( handler->file_suffix, (suffix_len + 1) * sizeof( char ) );
+    if( handler->file_suffix == NULL ) return -1;
+
+    if( strcpy( handler->file_suffix, file_suffix ) == NULL ) return -2;
+
+    if( wm_logger_handler_fopen( handler ) != 0 ) return -3;
+
+    return 0;
+}
+
+static int wm_logger_handler_fopen( wm_logger_handler_t *handler ) {
+    int dir_len, name_len, suffix_len, addr_len;
+    dir_len = strlen( handler->file_dir );
+    name_len = strlen( handler->file_name );
+    suffix_len = strlen( handler->file_suffix );
+    addr_len += dir_len + name_len + suffix_len;
+
+    if( !addr_len ) return -1;
+    addr_len += 4;
+
+    char addr[ addr_len ];
+    *addr = '\0';
+
+    if( strcat( addr, handler->file_dir ) == NULL ) return -2;
+    if( strcat( addr, handler->file_name ) == NULL ) return -3;
+    if( suffix_len ) {
+        if( strcat( addr, handler->file_suffix ) == NULL ) return -4;
+    }
+
+    if( handler->fd != NULL ) fclose( handler->fd );
+    handler->fd = fopen( addr, "ab+" );
     if( handler->fd == NULL ) return -5;
 
     return 0;
@@ -209,12 +252,13 @@ int wm_logger_handler_write( wm_logger_handler_t *handler, unsigned int level, c
 
         if( fd_pos < 0 ) return -2;
         if( fd_pos > handler->max_file_size ) {
-            // time_t now_time = time( NULL );
-            char new_file_addr[ 1024 ];
-            if( wm_logger_handler_get_file_addr( handler, new_file_addr ) != 0 ) return 4;
-            if( strcat( new_file_addr, "-" ) == NULL ) return -3;
+            time_t now_time = time( NULL );
+            char suffix[ 20 ];
+            srand( now_time );
+            printf( "max_file_size %d\n", handler->max_file_size );
+            if( sprintf( suffix, ".%d-%04d", now_time, rand() % 10000 ) < 0 ) return -3;
             
-            if( wm_logger_handler_set_file_addr( handler, new_file_addr ) != 0 ) return 5;
+            if( wm_logger_handler_set_file_suffix( handler, suffix ) != 0 ) return 5;
 
         }
     }
