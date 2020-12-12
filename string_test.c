@@ -10,7 +10,7 @@ int main(int argc, char const *argv[])
 	printf("当前进度0%%");
 	while(i<=100)
 	{
-		Sleep(100);
+		Sleep(10);
 		if( i<=10 )
 		{
 			printf("\b\b");
@@ -18,6 +18,7 @@ int main(int argc, char const *argv[])
 			printf("\b\b\b");
 		}
 		printf("%d%%", i);
+		fflush( stdout );
 		i++;
 	}
 
