@@ -1,10 +1,6 @@
 #ifndef __LINEAR_LIST_H__
 #define __LINEAR_LIST_H__
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 typedef struct linear_data
 {
     int id;

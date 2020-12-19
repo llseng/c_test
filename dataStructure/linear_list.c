@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "linear_list.h"
 
 LinearNode *linear_node_malloc( void ) 
