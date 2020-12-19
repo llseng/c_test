@@ -8,7 +8,11 @@ void init_array_queue( ArrayQueue *q )
 
 int empty_array_queue( ArrayQueue *q )
 {
-    if( q->head % MAX_ARRAY_QUEUE_SIZE == q->tail % MAX_ARRAY_QUEUE_SIZE ) return 1;
+    if( q->head % MAX_ARRAY_QUEUE_SIZE == q->tail % MAX_ARRAY_QUEUE_SIZE ) 
+    {
+        if( q->head > 0 ) init_array_queue( q );
+        return 1;
+    }
     return 0;
 }
 
