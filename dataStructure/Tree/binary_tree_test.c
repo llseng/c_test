@@ -112,6 +112,12 @@ int main(int argc, char const *argv[])
     printf( "level_order\n" );
     level_order_binary_tree( bt );
 
+    printf( "depth\n" );
+    count = depth_binary_tree( bt, bt_depth_recursion );
+    printf( "recursion: %d\n", count );
+    count = depth_binary_tree( bt, bt_depth_nrecursion );
+    printf( "nrecursion: %d\n", count );
+
     t1 = binary_tree_create( pre, in, 0, 9, 0, 9 );
     printf( "bt_pre_order_nrecursion\n" );
     bt_pre_order_nrecursion( t1 );

@@ -33,6 +33,10 @@ void bt_post_order_recursion( BinaryTreeNode *n );
 void bt_pre_order_nrecursion( BinaryTreeNode *n );
 void bt_in_order_nrecursion( BinaryTreeNode *n );
 void bt_post_order_nrecursion( BinaryTreeNode *n );
+// 树的深度
+int depth_binary_tree( BT bt, int (*f)(BinaryTreeNode *n) );
+int bt_depth_recursion( BinaryTreeNode *n );
+int bt_depth_nrecursion( BinaryTreeNode *n );
 
 typedef struct binary_tree_linear_table_node
 {

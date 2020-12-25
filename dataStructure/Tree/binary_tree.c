@@ -334,6 +334,56 @@ void bt_post_order_nrecursion( BinaryTreeNode *n )
     return ;
 }
 
+// 树的深度
+int depth_binary_tree( BT bt, int (*f)(BinaryTreeNode *n) )
+{
+    if( empty_binary_tree( bt ) ) return 0;
+    return f( bt->root );
+}
+
+int bt_depth_recursion( BinaryTreeNode *n )
+{
+    if( n == NULL ) return 0;
+    int ldepth = bt_depth_recursion( n->lchild ) + 1;
+    int rdepth = bt_depth_recursion( n->rchild ) + 1;
+    if( ldepth >= rdepth )
+    {
+        return ldepth;
+    }else{
+        return rdepth;
+    }
+}
+
+int bt_depth_nrecursion( BinaryTreeNode *n )
+{
+    if( n == NULL ) return 0;
+    int sign = 0;
+    BinaryTreeNode *p = n;
+    BinaryTreeLinearTable lt;
+
+    init_btlt( &lt );
+
+    rpush_btlt( &lt, p, 1 );
+
+    while ( !empty_btlt( &lt ) )
+    {
+        lget_btlt( &lt, &p, &sign );
+        lpop_btlt( &lt );
+
+        if( p->lchild != NULL )
+        {
+            rpush_btlt( &lt, p->lchild, sign + 1 );
+        }
+
+        if( p->rchild != NULL )
+        {
+            rpush_btlt( &lt, p->rchild, sign + 1 );
+        }
+    }
+    
+    return sign;
+}
+
 static BTLTN malloc_btltn( BinaryTreeNode *n, int s );
 
 void init_btlt( BTLT lt )
